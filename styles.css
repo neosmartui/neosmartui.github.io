@@ -31,6 +31,7 @@ ul { margin-bottom: 0; padding-left: 1.25rem; }
 .textarea-example label { font-weight: 750; }
 .select-example { display: grid; gap: 0.5rem; max-inline-size: 36rem; margin-top: 1.25rem; }
 .select-example label { font-weight: 750; }
+.card-example { max-inline-size: 40rem; margin-top: 1.25rem; }
 .footnote { margin-top: 2rem; font-size: 0.95rem; }
 @media (prefers-color-scheme: dark) {
   :root { color: #f8f4ea; background: #151515; }

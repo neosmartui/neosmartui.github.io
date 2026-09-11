@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="./tabs.css" />
     <link rel="stylesheet" href="./textarea.css" />
     <link rel="stylesheet" href="./select.css" />
+    <link rel="stylesheet" href="./card.css" />
   </head>
   <body>
     <main>
@@ -127,7 +128,7 @@
         </div>
       </section>
       <section aria-labelledby="select-slice">
-        <h2 id="select-slice">Implemented component: <code>core.select</code></h2>
+        <h2 id="select-slice">Public-proof component: <code>core.select</code></h2>
         <p>The native single-select owns its option picker and keyboard behavior. Only the collapsed choice trigger receives pressure feedback; NeoSmartUI does not replace the browser/OS option popup.</p>
         <div class="select-example">
           <label for="select-demo">Native single-select choice</label>
@@ -139,6 +140,24 @@
               <option value="disabled" disabled>Unavailable option</option>
             </optgroup>
           </select>
+        </div>
+      </section>
+      <section aria-labelledby="card-slice">
+        <h2 id="card-slice">Implemented component: <code>core.card</code></h2>
+        <p>The generic Card groups information without inventing activation. Its resting depth is structural and remains unchanged on hover or pointer contact.</p>
+        <div class="card-example">
+          <article class="ns-card" id="card-demo" aria-labelledby="card-demo-title">
+            <header class="ns-card-header">
+              <h3 class="ns-card-title" id="card-demo-title">Stable informational surface</h3>
+              <p class="ns-card-description">Grouped content, not a disguised button.</p>
+            </header>
+            <div class="ns-card-content">
+              <p>Informational cards remain motionless while interactive descendants, when present, own their own semantics.</p>
+            </div>
+            <footer class="ns-card-footer">
+              <p>Resting depth is structure, not hover affordance.</p>
+            </footer>
+          </article>
         </div>
       </section>
       <section aria-labelledby="principles">
