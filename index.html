@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="./badge.css" />
     <link rel="stylesheet" href="./alert.css" />
     <link rel="stylesheet" href="./field.css" />
+    <link rel="stylesheet" href="./breadcrumb.css" />
   </head>
   <body>
     <main>
@@ -221,6 +222,21 @@
             <p class="ns-field-description" id="field-locked-help">The disabled state belongs to the real control, not the Field container.</p>
           </div>
         </div>
+      </section>
+      <section aria-labelledby="breadcrumb-slice">
+        <h2 id="breadcrumb-slice">Implemented component: <code>core.breadcrumb</code></h2>
+        <p>Breadcrumb exposes a real ordered location hierarchy. Ancestor locations stay native links, separators and passive ellipsis are presentation-only, and the current page is non-interactive text with <code>aria-current="page"</code>.</p>
+        <nav class="ns-breadcrumb breadcrumb-example" id="breadcrumb-demo" aria-label="Breadcrumb">
+          <ol class="ns-breadcrumb-list">
+            <li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-components" href="#button-slice">Components</a></li>
+            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-forms" href="#field-slice">Forms</a></li>
+            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ns-breadcrumb-ellipsis" aria-hidden="true">…</li>
+            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
+            <li class="ns-breadcrumb-item"><span class="ns-breadcrumb-current" id="breadcrumb-current" aria-current="page">Breadcrumb</span></li>
+          </ol>
+        </nav>
       </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>

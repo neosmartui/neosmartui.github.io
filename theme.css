@@ -21,6 +21,7 @@
   --ns-space-control-inline: 1rem;
   --ns-space-control-block: 0.75rem;
   --ns-space-field-gap: clamp(0.5rem, 0.44rem + 0.18vw, 0.6875rem);
+  --ns-space-navigation-gap: 0.45rem;
   --ns-space-surface-inline: 1rem;
   --ns-space-surface-block: 1rem;
   --ns-space-annotation-inline: 0.55rem;
@@ -48,6 +49,7 @@
   --ns-font-family-body: ui-sans-serif, system-ui, sans-serif;
   --ns-font-size-body: 1rem;
   --ns-font-size-label: 1rem;
+  --ns-font-size-navigation: clamp(0.72rem, 0.69rem + 0.08vw, 0.78rem);
   --ns-font-weight-regular: 500;
   --ns-font-weight-emphasis: 750;
   --ns-font-weight-strong: 800;

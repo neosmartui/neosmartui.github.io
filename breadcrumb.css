@@ -1,0 +1,107 @@
+.ns-breadcrumb {
+  min-inline-size: 0;
+  color: var(--ns-color-content-secondary);
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-navigation);
+  font-weight: var(--ns-font-weight-regular);
+  transform: none;
+  transition: none;
+}
+
+.ns-breadcrumb-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-inline-size: 0;
+  gap: var(--ns-space-navigation-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ns-breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  min-inline-size: 0;
+}
+
+.ns-breadcrumb-link {
+  min-inline-size: 0;
+  color: var(--ns-color-content-secondary);
+  font: inherit;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+  box-shadow: none;
+  transform: none;
+  transition: none;
+}
+
+.ns-breadcrumb-link:visited {
+  color: var(--ns-color-content-secondary);
+}
+
+.ns-breadcrumb-link:hover {
+  color: var(--ns-color-content-primary);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.18em;
+  box-shadow: none;
+  transform: none;
+}
+
+.ns-breadcrumb-link:focus-visible {
+  color: var(--ns-color-content-primary);
+  outline: var(--ns-focus-ring-width) solid var(--ns-color-focus-ring);
+  outline-offset: var(--ns-focus-ring-offset);
+  box-shadow: none;
+  transform: none;
+}
+
+.ns-breadcrumb-link:active {
+  color: var(--ns-color-content-primary);
+  box-shadow: none;
+  transform: none;
+}
+
+.ns-breadcrumb-current {
+  min-inline-size: 0;
+  color: var(--ns-color-content-primary);
+  font-weight: var(--ns-font-weight-emphasis);
+  overflow-wrap: anywhere;
+  transform: none;
+  transition: none;
+}
+
+.ns-breadcrumb-separator,
+.ns-breadcrumb-ellipsis {
+  flex: none;
+  color: var(--ns-color-content-secondary);
+  font-weight: var(--ns-font-weight-regular);
+  user-select: none;
+  transform: none;
+  transition: none;
+}
+
+@media (forced-colors: active) {
+  .ns-breadcrumb,
+  .ns-breadcrumb-current,
+  .ns-breadcrumb-separator,
+  .ns-breadcrumb-ellipsis {
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+
+  .ns-breadcrumb-link,
+  .ns-breadcrumb-link:visited,
+  .ns-breadcrumb-link:hover,
+  .ns-breadcrumb-link:active {
+    color: LinkText;
+    forced-color-adjust: auto;
+  }
+
+  .ns-breadcrumb-link:focus-visible {
+    color: LinkText;
+    outline-color: Highlight;
+    forced-color-adjust: auto;
+  }
+}
