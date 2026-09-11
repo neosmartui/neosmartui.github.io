@@ -1,0 +1,70 @@
+.ns-select {
+  display: block;
+  inline-size: 100%;
+  min-block-size: var(--ns-size-control-minimum);
+  padding: var(--ns-space-control-block) var(--ns-space-control-inline);
+  border: var(--ns-border-control-width) solid var(--ns-color-border-default);
+  border-radius: var(--ns-radius-control);
+  background: var(--ns-color-surface-interactive);
+  color: var(--ns-color-content-primary);
+  box-shadow: var(--ns-depth-rest-x) var(--ns-depth-rest-y) 0 var(--ns-color-border-strong);
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-body);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: 1.25;
+  cursor: pointer;
+  transform: translate(0, 0);
+  transition-property: transform, box-shadow, border-color, opacity;
+  transition-duration: var(--ns-motion-release-duration);
+  transition-timing-function: var(--ns-motion-release-easing);
+}
+
+@media (hover: hover) {
+  .ns-select:hover:not(:disabled) {
+    border-color: var(--ns-color-border-strong);
+    transform: translate(var(--ns-press-hover-x), var(--ns-press-hover-y));
+    box-shadow: var(--ns-depth-hover-x) var(--ns-depth-hover-y) 0 var(--ns-color-border-strong);
+    transition-duration: var(--ns-motion-press-duration);
+    transition-timing-function: var(--ns-motion-press-easing);
+  }
+}
+
+.ns-select:active:not(:disabled),
+.ns-select[data-pressed="true"]:not(:disabled) {
+  transform: translate(var(--ns-press-active-x), var(--ns-press-active-y));
+  box-shadow: var(--ns-depth-active-x) var(--ns-depth-active-y) 0 var(--ns-color-border-strong);
+  transition-duration: var(--ns-motion-press-duration);
+  transition-timing-function: var(--ns-motion-press-easing);
+}
+
+.ns-select:focus-visible {
+  border-color: var(--ns-color-border-strong);
+  outline: var(--ns-focus-ring-width) solid var(--ns-color-focus-ring);
+  outline-offset: var(--ns-focus-ring-offset);
+}
+
+.ns-select[aria-invalid="true"] {
+  border-color: var(--ns-color-state-error);
+}
+
+.ns-select:disabled {
+  cursor: not-allowed;
+  opacity: var(--ns-opacity-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-select { transition-duration: 1ms; }
+}
+
+@media (forced-colors: active) {
+  .ns-select {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+    box-shadow: 5px 5px 0 ButtonText;
+    forced-color-adjust: auto;
+  }
+  .ns-select:focus-visible { outline-color: Highlight; }
+  .ns-select[aria-invalid="true"] { border-color: Mark; }
+  .ns-select:disabled { color: GrayText; }
+}
