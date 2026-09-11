@@ -1,0 +1,119 @@
+.ns-switch {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  inline-size: calc(var(--ns-size-control-minimum) * 1.65);
+  block-size: var(--ns-size-control-minimum);
+  flex: 0 0 auto;
+  vertical-align: middle;
+}
+
+.ns-switch-input {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.ns-switch-visual {
+  position: relative;
+  inline-size: calc(var(--ns-size-control-minimum) * 1.35);
+  block-size: calc(var(--ns-size-control-minimum) * 0.68);
+  border: var(--ns-border-control-width) solid var(--ns-color-border-strong);
+  border-radius: calc(var(--ns-size-control-minimum) * 0.5);
+  background: var(--ns-color-surface-interactive);
+  box-shadow: var(--ns-depth-rest-x) var(--ns-depth-rest-y) 0 var(--ns-color-border-strong);
+  transform: translate(0, 0);
+  transition-property: transform, box-shadow, background-color, border-color, opacity;
+  transition-duration: var(--ns-motion-release-duration);
+  transition-timing-function: var(--ns-motion-release-easing);
+  pointer-events: none;
+}
+
+.ns-switch-thumb {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: calc(var(--ns-border-control-width) * 1.25);
+  inline-size: calc(var(--ns-size-control-minimum) * 0.42);
+  block-size: calc(var(--ns-size-control-minimum) * 0.42);
+  border: var(--ns-border-control-width) solid var(--ns-color-border-strong);
+  border-radius: 50%;
+  background: var(--ns-color-border-strong);
+  transform: translateY(-50%);
+  transition-property: inset-inline-start, background-color, border-color;
+  transition-duration: var(--ns-motion-standard-duration);
+  transition-timing-function: var(--ns-motion-standard-easing);
+}
+
+.ns-switch-input:checked + .ns-switch-visual {
+  background: var(--ns-color-action-primary-surface);
+}
+
+.ns-switch-input:checked + .ns-switch-visual .ns-switch-thumb {
+  inset-inline-start: calc(100% - (var(--ns-size-control-minimum) * 0.42) - (var(--ns-border-control-width) * 1.25));
+  background: var(--ns-color-action-primary-content);
+}
+
+@media (hover: hover) {
+  .ns-switch-input:hover:not(:disabled) + .ns-switch-visual {
+    transform: translate(var(--ns-press-hover-x), var(--ns-press-hover-y));
+    box-shadow: var(--ns-depth-hover-x) var(--ns-depth-hover-y) 0 var(--ns-color-border-strong);
+    transition-duration: var(--ns-motion-press-duration);
+    transition-timing-function: var(--ns-motion-press-easing);
+  }
+}
+
+.ns-switch-input:active:not(:disabled) + .ns-switch-visual {
+  transform: translate(var(--ns-press-active-x), var(--ns-press-active-y));
+  box-shadow: var(--ns-depth-active-x) var(--ns-depth-active-y) 0 var(--ns-color-border-strong);
+  transition-duration: var(--ns-motion-press-duration);
+  transition-timing-function: var(--ns-motion-press-easing);
+}
+
+.ns-switch-input:focus-visible + .ns-switch-visual {
+  outline: var(--ns-focus-ring-width) solid var(--ns-color-focus-ring);
+  outline-offset: var(--ns-focus-ring-offset);
+}
+
+.ns-switch-input[aria-invalid="true"] + .ns-switch-visual {
+  border-color: var(--ns-color-state-error);
+}
+
+.ns-switch-input:disabled {
+  cursor: not-allowed;
+}
+
+.ns-switch-input:disabled + .ns-switch-visual {
+  opacity: var(--ns-opacity-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-switch-visual,
+  .ns-switch-thumb { transition-duration: 1ms; }
+}
+
+@media (forced-colors: active) {
+  .ns-switch-visual {
+    background: Canvas;
+    border-color: ButtonText;
+    box-shadow: 5px 5px 0 ButtonText;
+    forced-color-adjust: auto;
+  }
+  .ns-switch-thumb {
+    background: ButtonText;
+    border-color: ButtonText;
+  }
+  .ns-switch-input:checked + .ns-switch-visual {
+    background: Highlight;
+    border-color: Highlight;
+  }
+  .ns-switch-input:checked + .ns-switch-visual .ns-switch-thumb {
+    background: HighlightText;
+    border-color: HighlightText;
+  }
+  .ns-switch-input:focus-visible + .ns-switch-visual { outline-color: Highlight; }
+  .ns-switch-input[aria-invalid="true"] + .ns-switch-visual { border-color: Mark; }
+}

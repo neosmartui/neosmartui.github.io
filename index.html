@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./checkbox.css" />
     <link rel="stylesheet" href="./input.css" />
     <link rel="stylesheet" href="./radio.css" />
+    <link rel="stylesheet" href="./switch.css" />
   </head>
   <body>
     <main>
@@ -47,7 +48,7 @@
         </div>
       </section>
       <section aria-labelledby="input-slice">
-        <h2 id="input-slice">Implemented component: <code>core.input</code></h2>
+        <h2 id="input-slice">Public-proof component: <code>core.input</code></h2>
         <p>The native text input owns editing and selection. It is interactive, not pressable: hover, focus, and pointer contact never translate the field or simulate button compression.</p>
         <div class="input-example">
           <label for="input-demo">Single-line native input</label>
@@ -55,7 +56,7 @@
         </div>
       </section>
       <section aria-labelledby="radio-slice">
-        <h2 id="radio-slice">Implemented component: <code>core.radio</code></h2>
+        <h2 id="radio-slice">Public-proof component: <code>core.radio</code></h2>
         <p>Native radios preserve one-of-many selection and platform keyboard behavior. Contact compresses into the surface while checked state remains explicit across the whole group.</p>
         <fieldset class="radio-examples">
           <legend>Choose one native radio option</legend>
@@ -75,6 +76,17 @@
           </div>
         </fieldset>
       </section>
+      <section aria-labelledby="switch-slice">
+        <h2 id="switch-slice">Implemented component: <code>core.switch</code></h2>
+        <p>A native checkbox base exposes switch semantics while checked state stays authoritative. Contact compresses the whole track; persistent state moves the thumb from logical inline-start to inline-end as track color resolves.</p>
+        <div class="switch-row">
+          <span class="ns-switch">
+            <input class="ns-switch-input" id="switch-demo" type="checkbox" role="switch" />
+            <span class="ns-switch-visual" aria-hidden="true"><span class="ns-switch-thumb"></span></span>
+          </span>
+          <label for="switch-demo">Toggle immediate binary setting</label>
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul>
@@ -89,10 +101,12 @@
       import { bindCheckbox } from './checkbox.mjs';
       import { bindInput } from './input.mjs';
       import { bindRadio } from './radio.mjs';
+      import { bindSwitch } from './switch.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
       bindRadio(document.querySelector('#radio-alpha'));
+      bindSwitch(document.querySelector('#switch-demo'));
     </script>
   </body>
 </html>

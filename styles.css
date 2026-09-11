@@ -23,6 +23,8 @@ ul { margin-bottom: 0; padding-left: 1.25rem; }
 .radio-examples legend { margin-bottom: 0.5rem; font-weight: 750; }
 .radio-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; font-weight: 750; }
 .radio-row label { overflow-wrap: anywhere; cursor: pointer; }
+.switch-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; margin-top: 1.25rem; font-weight: 750; }
+.switch-row label { overflow-wrap: anywhere; cursor: pointer; }
 .footnote { margin-top: 2rem; font-size: 0.95rem; }
 @media (prefers-color-scheme: dark) {
   :root { color: #f8f4ea; background: #151515; }
