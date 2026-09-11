@@ -1,7 +1,11 @@
 :root {
+  --ns-color-surface-interactive: #ffffff;
+  --ns-color-content-primary: #111111;
+  --ns-color-border-default: #5f5a50;
+  --ns-color-border-strong: #111111;
   --ns-color-action-primary-surface: #ffd84d;
   --ns-color-action-primary-content: #111111;
-  --ns-color-border-strong: #111111;
+  --ns-color-state-error: #c1121f;
   --ns-border-control-width: 3px;
   --ns-radius-control: 6px;
   --ns-space-control-inline: 1rem;

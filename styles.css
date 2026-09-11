@@ -14,6 +14,9 @@ h2 { margin-top: 0; font-size: clamp(1.4rem, 3vw, 2rem); }
 .lede { max-width: 56rem; margin: 2rem 0 4rem; font-size: clamp(1.1rem, 2vw, 1.5rem); }
 section { margin-top: 1rem; border: 3px solid currentColor; padding: clamp(1.25rem, 3vw, 2rem); box-shadow: 6px 6px 0 currentColor; background: #fff; }
 ul { margin-bottom: 0; padding-left: 1.25rem; }
+.checkbox-examples { display: grid; gap: 0.75rem; margin-top: 1.25rem; }
+.checkbox-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; font-weight: 750; }
+.checkbox-row label { overflow-wrap: anywhere; cursor: pointer; }
 .footnote { margin-top: 2rem; font-size: 0.95rem; }
 @media (prefers-color-scheme: dark) {
   :root { color: #f8f4ea; background: #151515; }

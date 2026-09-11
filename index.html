@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles.css" />
     <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./button.css" />
+    <link rel="stylesheet" href="./checkbox.css" />
   </head>
   <body>
     <main>
@@ -15,13 +16,33 @@
       <h1>Built for humans.<br />Structured for agents.</h1>
       <p class="lede">NeoSmartUI is the AI-first neo-brutalist UI system. This Foundry is the public proof surface for one canonical architecture: Components → Blocks → Pages → Applications.</p>
       <section aria-labelledby="foundation-status">
-        <h2 id="foundation-status">v0.1 Foundation</h2>
-        <p>The Foundry now has a real Core component contract, a resolved Rivet Light token slice, and adapter-owned rendering boundaries. Public-proof maturity remains gated on deployed evidence.</p>
+        <h2 id="foundation-status">v0.2 Core</h2>
+        <p>The Foundry now exercises multiple generic Core primitives through one resolved Rivet Light Theme and adapter-owned rendering boundaries. Public-proof maturity remains separately gated on deployed evidence.</p>
       </section>
-      <section aria-labelledby="component-slice">
-        <h2 id="component-slice">Implemented component slice</h2>
-        <p><code>core.button</code> is implemented through the Web adapter using resolved semantic tokens. Hover compresses into the surface; press seats the control instead of lifting it.</p>
+      <section aria-labelledby="button-slice">
+        <h2 id="button-slice">Public-proof component: <code>core.button</code></h2>
+        <p><code>core.button</code> is rendered through the Web adapter using resolved semantic tokens. Hover compresses into the surface; press seats the control instead of lifting it.</p>
         <button class="ns-button" type="button">Pressure, not levitation</button>
+      </section>
+      <section aria-labelledby="checkbox-slice">
+        <h2 id="checkbox-slice">Implemented component: <code>core.checkbox</code></h2>
+        <p>The native checkbox remains the semantic control. A 44px token-backed hit target contains the smaller visual box, with checked and indeterminate state remaining distinct after contact feedback ends.</p>
+        <div class="checkbox-examples">
+          <div class="checkbox-row">
+            <span class="ns-checkbox">
+              <input class="ns-checkbox-input" id="checkbox-demo" type="checkbox" />
+              <span class="ns-checkbox-visual" aria-hidden="true"></span>
+            </span>
+            <label for="checkbox-demo">Toggle tactile selection</label>
+          </div>
+          <div class="checkbox-row">
+            <span class="ns-checkbox">
+              <input class="ns-checkbox-input" id="checkbox-mixed" type="checkbox" />
+              <span class="ns-checkbox-visual" aria-hidden="true"></span>
+            </span>
+            <label for="checkbox-mixed">Indeterminate presentation</label>
+          </div>
+        </div>
       </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
@@ -33,5 +54,10 @@
       </section>
       <p class="footnote">This page may display implemented slices, but registry maturity reaches <code>public-proof</code> only after deployed, verified evidence exists.</p>
     </main>
+    <script type="module">
+      import { bindCheckbox } from './checkbox.mjs';
+      bindCheckbox(document.querySelector('#checkbox-demo'));
+      bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
+    </script>
   </body>
 </html>
