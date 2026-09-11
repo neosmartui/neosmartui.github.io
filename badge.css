@@ -1,0 +1,52 @@
+.ns-badge {
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-inline-size: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25em;
+  padding-block: var(--ns-space-annotation-block);
+  padding-inline: var(--ns-space-annotation-inline);
+  color: var(--ns-color-content-primary);
+  background: var(--ns-color-surface-panel);
+  border: var(--ns-border-annotation-width) solid var(--ns-color-border-strong);
+  border-radius: var(--ns-radius-annotation);
+  box-shadow: none;
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-label);
+  font-weight: var(--ns-font-weight-emphasis);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  white-space: normal;
+  transform: none;
+  transition: none;
+  cursor: inherit;
+}
+
+.ns-badge[data-tone="info"] {
+  background: var(--ns-color-state-info);
+}
+
+.ns-badge[data-tone="success"] {
+  background: var(--ns-color-state-success);
+}
+
+.ns-badge[data-tone="warning"] {
+  background: var(--ns-color-state-warning);
+}
+
+.ns-badge[data-tone="error"] {
+  color: var(--ns-color-content-inverse);
+  background: var(--ns-color-state-error);
+}
+
+@media (forced-colors: active) {
+  .ns-badge {
+    color: CanvasText;
+    background: Canvas;
+    border-color: CanvasText;
+    box-shadow: none;
+    forced-color-adjust: auto;
+  }
+}
