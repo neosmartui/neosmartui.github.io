@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="./select.css" />
     <link rel="stylesheet" href="./card.css" />
     <link rel="stylesheet" href="./badge.css" />
+    <link rel="stylesheet" href="./alert.css" />
   </head>
   <body>
     <main>
@@ -170,6 +171,32 @@
           <span class="ns-badge" id="badge-success" data-tone="success">Success · Ready</span>
           <span class="ns-badge" id="badge-warning" data-tone="warning">Warning · Needs attention</span>
           <span class="ns-badge" id="badge-error" data-tone="error">Error · Failed</span>
+        </div>
+      </section>
+      <section aria-labelledby="alert-slice">
+        <h2 id="alert-slice">Implemented component: <code>core.alert</code></h2>
+        <p>Alerts are stable message surfaces, not implicit live regions. Tone supports explicit written meaning; announcement urgency remains a composition decision.</p>
+        <div class="alert-examples" aria-label="Alert tone examples">
+          <div class="ns-alert" id="alert-neutral" data-tone="neutral">
+            <p class="ns-alert-title">Neutral · Note</p>
+            <p class="ns-alert-body">Static message surface; no implicit live region.</p>
+          </div>
+          <div class="ns-alert" id="alert-info" data-tone="info">
+            <p class="ns-alert-title">Info · Update</p>
+            <p class="ns-alert-body">Reference information is available without demanding immediate interruption.</p>
+          </div>
+          <div class="ns-alert" id="alert-success" data-tone="success">
+            <p class="ns-alert-title">Success · Complete</p>
+            <p class="ns-alert-body">The visible message carries success meaning even when custom color is unavailable.</p>
+          </div>
+          <div class="ns-alert" id="alert-warning" data-tone="warning">
+            <p class="ns-alert-title">Warning · Check this</p>
+            <p class="ns-alert-body">Attention is useful, but this static callout is not automatically an assertive announcement.</p>
+          </div>
+          <div class="ns-alert" id="alert-error" data-tone="error">
+            <p class="ns-alert-title">Error · Needs correction</p>
+            <p class="ns-alert-body">Error text remains explicit instead of relying on a red border alone.</p>
+          </div>
         </div>
       </section>
       <section aria-labelledby="principles">
