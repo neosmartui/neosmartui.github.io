@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./button.css" />
     <link rel="stylesheet" href="./checkbox.css" />
+    <link rel="stylesheet" href="./input.css" />
   </head>
   <body>
     <main>
@@ -17,7 +18,7 @@
       <p class="lede">NeoSmartUI is the AI-first neo-brutalist UI system. This Foundry is the public proof surface for one canonical architecture: Components → Blocks → Pages → Applications.</p>
       <section aria-labelledby="foundation-status">
         <h2 id="foundation-status">v0.2 Core</h2>
-        <p>The Foundry now exercises multiple generic Core primitives through one resolved Rivet Light Theme and adapter-owned rendering boundaries. Public-proof maturity remains separately gated on deployed evidence.</p>
+        <p>The Foundry exercises generic Core primitives through one resolved Rivet Light Theme and adapter-owned rendering boundaries. Public-proof maturity remains separately gated on deployed evidence.</p>
       </section>
       <section aria-labelledby="button-slice">
         <h2 id="button-slice">Public-proof component: <code>core.button</code></h2>
@@ -25,7 +26,7 @@
         <button class="ns-button" type="button">Pressure, not levitation</button>
       </section>
       <section aria-labelledby="checkbox-slice">
-        <h2 id="checkbox-slice">Implemented component: <code>core.checkbox</code></h2>
+        <h2 id="checkbox-slice">Public-proof component: <code>core.checkbox</code></h2>
         <p>The native checkbox remains the semantic control. A 44px token-backed hit target contains the smaller visual box, with checked and indeterminate state remaining distinct after contact feedback ends.</p>
         <div class="checkbox-examples">
           <div class="checkbox-row">
@@ -44,6 +45,14 @@
           </div>
         </div>
       </section>
+      <section aria-labelledby="input-slice">
+        <h2 id="input-slice">Implemented component: <code>core.input</code></h2>
+        <p>The native text input owns editing and selection. It is interactive, not pressable: hover, focus, and pointer contact never translate the field or simulate button compression.</p>
+        <div class="input-example">
+          <label for="input-demo">Single-line native input</label>
+          <input class="ns-input" id="input-demo" type="text" autocomplete="off" placeholder="Type without fake press motion" />
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul>
@@ -56,8 +65,10 @@
     </main>
     <script type="module">
       import { bindCheckbox } from './checkbox.mjs';
+      import { bindInput } from './input.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
+      bindInput(document.querySelector('#input-demo'));
     </script>
   </body>
 </html>

@@ -1,6 +1,7 @@
 :root {
   --ns-color-surface-interactive: #ffffff;
   --ns-color-content-primary: #111111;
+  --ns-color-content-secondary: #5f5a50;
   --ns-color-border-default: #5f5a50;
   --ns-color-border-strong: #111111;
   --ns-color-action-primary-surface: #ffd84d;
@@ -25,8 +26,13 @@
   --ns-motion-press-easing: cubic-bezier(0.2, 0, 0, 1);
   --ns-motion-release-duration: 140ms;
   --ns-motion-release-easing: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --ns-motion-standard-duration: 160ms;
+  --ns-motion-standard-easing: cubic-bezier(0.2, 0, 0, 1);
   --ns-color-focus-ring: #2457ff;
   --ns-focus-ring-width: 3px;
   --ns-focus-ring-offset: 3px;
+  --ns-font-family-body: ui-sans-serif, system-ui, sans-serif;
+  --ns-font-size-body: 1rem;
+  --ns-font-weight-regular: 500;
   --ns-opacity-disabled: 0.5;
 }
