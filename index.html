@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="./radio.css" />
     <link rel="stylesheet" href="./switch.css" />
     <link rel="stylesheet" href="./tabs.css" />
+    <link rel="stylesheet" href="./textarea.css" />
   </head>
   <body>
     <main>
@@ -89,7 +90,7 @@
         </div>
       </section>
       <section aria-labelledby="tabs-slice">
-        <h2 id="tabs-slice">Implemented component: <code>core.tabs</code></h2>
+        <h2 id="tabs-slice">Public-proof component: <code>core.tabs</code></h2>
         <p>Tabs are a composite widget: roving focus, selected panel, and activation mode remain explicit. Selected tabs stay seated in their rail instead of rising above their peers.</p>
         <div class="tabs-examples">
           <div class="ns-tabs" id="tabs-auto-demo">
@@ -116,6 +117,14 @@
           </div>
         </div>
       </section>
+      <section aria-labelledby="textarea-slice">
+        <h2 id="textarea-slice">Implemented component: <code>core.textarea</code></h2>
+        <p>The native multiline textarea preserves line breaks, selection, scrolling, IME, and resize behavior. It is interactive, not pressable: editing and resize contact never borrow button compression.</p>
+        <div class="textarea-example">
+          <label for="textarea-demo">Multiline native textarea</label>
+          <textarea class="ns-textarea" id="textarea-demo" rows="5" placeholder="Write multiple lines without fake press motion"></textarea>
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul>
@@ -132,6 +141,7 @@
       import { bindRadio } from './radio.mjs';
       import { bindSwitch } from './switch.mjs';
       import { bindTabs } from './tabs.mjs';
+      import { bindTextarea } from './textarea.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
@@ -139,6 +149,7 @@
       bindSwitch(document.querySelector('#switch-demo'));
       bindTabs(document.querySelector('#tabs-auto-list'));
       bindTabs(document.querySelector('#tabs-manual-list'));
+      bindTextarea(document.querySelector('#textarea-demo'));
     </script>
   </body>
 </html>

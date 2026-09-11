@@ -27,6 +27,8 @@ ul { margin-bottom: 0; padding-left: 1.25rem; }
 .switch-row label { overflow-wrap: anywhere; cursor: pointer; }
 .tabs-examples { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
 .tabs-example-label { margin: 0 0 0.5rem; font-weight: 750; }
+.textarea-example { display: grid; gap: 0.5rem; max-inline-size: 42rem; margin-top: 1.25rem; }
+.textarea-example label { font-weight: 750; }
 .footnote { margin-top: 2rem; font-size: 0.95rem; }
 @media (prefers-color-scheme: dark) {
   :root { color: #f8f4ea; background: #151515; }
