@@ -1,0 +1,28 @@
+:root {
+  --ns-color-action-primary-surface: #ffd84d;
+  --ns-color-action-primary-content: #111111;
+  --ns-color-border-strong: #111111;
+  --ns-border-control-width: 3px;
+  --ns-radius-control: 6px;
+  --ns-space-control-inline: 1rem;
+  --ns-space-control-block: 0.75rem;
+  --ns-size-control-minimum: 44px;
+  --ns-depth-rest-x: 5px;
+  --ns-depth-rest-y: 5px;
+  --ns-depth-hover-x: 3px;
+  --ns-depth-hover-y: 3px;
+  --ns-depth-active-x: 0px;
+  --ns-depth-active-y: 0px;
+  --ns-press-hover-x: 2px;
+  --ns-press-hover-y: 2px;
+  --ns-press-active-x: 5px;
+  --ns-press-active-y: 5px;
+  --ns-motion-press-duration: 80ms;
+  --ns-motion-press-easing: cubic-bezier(0.2, 0, 0, 1);
+  --ns-motion-release-duration: 140ms;
+  --ns-motion-release-easing: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --ns-color-focus-ring: #2457ff;
+  --ns-focus-ring-width: 3px;
+  --ns-focus-ring-offset: 3px;
+  --ns-opacity-disabled: 0.5;
+}
