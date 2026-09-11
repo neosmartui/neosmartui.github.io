@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./card.css" />
     <link rel="stylesheet" href="./badge.css" />
     <link rel="stylesheet" href="./alert.css" />
+    <link rel="stylesheet" href="./field.css" />
   </head>
   <body>
     <main>
@@ -196,6 +197,28 @@
           <div class="ns-alert" id="alert-error" data-tone="error">
             <p class="ns-alert-title">Error · Needs correction</p>
             <p class="ns-alert-body">Error text remains explicit instead of relying on a red border alone.</p>
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="field-slice">
+        <h2 id="field-slice">Implemented component: <code>core.field</code></h2>
+        <p>Field composes one real control with its label, help, and validation relationships. The container is not a group, action, or live region; semantics stay on the actual control and associated text.</p>
+        <div class="field-examples" aria-label="Field semantic examples">
+          <div class="ns-field" id="field-normal-demo">
+            <label class="ns-field-label" for="field-email">Email address</label>
+            <input class="ns-input" id="field-email" type="email" autocomplete="off" aria-describedby="field-email-help" />
+            <p class="ns-field-description" id="field-email-help">Use an address where account notices can reach you.</p>
+          </div>
+          <div class="ns-field" id="field-invalid-demo">
+            <label class="ns-field-label" for="field-code">Invite code</label>
+            <input class="ns-input" id="field-code" type="text" value="expired-code" aria-invalid="true" aria-describedby="field-code-help" aria-errormessage="field-code-error" />
+            <p class="ns-field-description" id="field-code-help">Codes are case-sensitive and may expire.</p>
+            <p class="ns-field-message" id="field-code-error">This invite code has expired. Request a new code.</p>
+          </div>
+          <div class="ns-field" id="field-disabled-demo">
+            <label class="ns-field-label" for="field-locked">Locked setting</label>
+            <input class="ns-input" id="field-locked" type="text" value="Managed by your workspace" disabled aria-describedby="field-locked-help" />
+            <p class="ns-field-description" id="field-locked-help">The disabled state belongs to the real control, not the Field container.</p>
           </div>
         </div>
       </section>
