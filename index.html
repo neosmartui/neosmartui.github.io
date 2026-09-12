@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="./segmented-control.css" />
     <link rel="stylesheet" href="./tooltip.css" />
     <link rel="stylesheet" href="./combobox.css" />
+    <link rel="stylesheet" href="./accordion.css" />
   </head>
   <body>
     <main>
@@ -191,6 +192,34 @@
           </div>
         </div>
       </section>
+      <section aria-labelledby="accordion-slice">
+        <h2 id="accordion-slice">Implemented component: <code>core.accordion</code></h2>
+        <p>Accordion discloses related content with real buttons and ordinary document focus. Space and Enter use native button activation; Arrow/Home/End keys are not remapped into Tabs-style roving focus.</p>
+        <div class="ns-accordion" id="accordion-single-demo" data-expansion="single">
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-a" type="button" aria-expanded="true" aria-controls="accordion-single-panel-a"><span>Single expansion · Architecture</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-a" aria-labelledby="accordion-single-trigger-a"><p>One open item does not turn disclosure state into tab selection.</p><a id="accordion-panel-link" href="#principles">Focusable panel content</a></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-b" type="button" aria-expanded="false" aria-controls="accordion-single-panel-b"><span>Single expansion · Interaction</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-b" aria-labelledby="accordion-single-trigger-b" hidden><p>Opening this item closes its peer while focus remains on the activating button.</p></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-disabled" type="button" aria-expanded="false" aria-controls="accordion-single-panel-disabled" disabled><span>Unavailable disclosure</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-disabled" aria-labelledby="accordion-single-trigger-disabled" hidden><p>Disabled native buttons stay inert.</p></div>
+          </div>
+        </div>
+        <div class="ns-accordion" id="accordion-multiple-demo" data-expansion="multiple">
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-multiple-trigger-a" type="button" aria-expanded="false" aria-controls="accordion-multiple-panel-a"><span>Multiple expansion · First</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-multiple-panel-a" aria-labelledby="accordion-multiple-trigger-a" hidden><p>Multiple mode allows peers to remain independently disclosed.</p></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-multiple-trigger-b" type="button" aria-expanded="false" aria-controls="accordion-multiple-panel-b"><span>Multiple expansion · Second</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-multiple-panel-b" aria-labelledby="accordion-multiple-trigger-b" hidden><p>Each open panel remains a disclosure, never a selected tabpanel.</p></div>
+          </div>
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul><li>Restart the architecture, not the knowledge.</li><li>Source once. Demonstrate everywhere.</li><li>Pressure, not levitation.</li></ul>
@@ -208,6 +237,7 @@
       import { bindSegmentedControl } from './segmented-control.mjs';
       import { bindTooltip } from './tooltip.mjs';
       import { bindCombobox } from './combobox.mjs';
+      import { bindAccordion } from './accordion.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
@@ -220,6 +250,8 @@
       bindSegmentedControl(document.querySelector('#segmented-control-demo'));
       bindTooltip(document.querySelector('#tooltip-target'));
       bindCombobox(document.querySelector('#combobox-demo'));
+      bindAccordion(document.querySelector('#accordion-single-demo'));
+      bindAccordion(document.querySelector('#accordion-multiple-demo'));
     </script>
   </body>
 </html>
