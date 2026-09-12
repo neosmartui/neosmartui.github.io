@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Mono Light — the editorial black/white/gray NeoSmartUI flavor rendered through shared Core adapters." />
+    <title>Mono Light — NeoSmartUI Foundry</title>
+    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../../theme.css" />
+    <link rel="stylesheet" href="../../mono-theme.css" />
+    <link rel="stylesheet" href="../../button.css" />
+    <link rel="stylesheet" href="../../input.css" />
+    <link rel="stylesheet" href="../../card.css" />
+    <link rel="stylesheet" href="../../badge.css" />
+  </head>
+  <body>
+    <main class="ns-theme-mono-light" id="mono-foundry">
+      <p class="eyebrow">NeoSmartUI Foundry · Flavor Engine</p>
+      <h1>Mono Light</h1>
+      <p class="lede">The editorial black/white/gray NeoSmartUI flavor. Mono uses the same shipping Core adapter CSS as Hardline, Soft, and Rivet; typography, keylines, grayscale contrast, and disciplined depth change expression without changing semantics.</p>
+
+      <section aria-labelledby="mono-contract">
+        <h2 id="mono-contract">Editorial pressure, shared semantics</h2>
+        <p>Mono resolves 2px print-like keylines, square geometry, 3→1→0px crisp depth, 0→2→3px inward travel, serif-led hierarchy, grayscale-only semantic surfaces, and an independent black focus keyline.</p>
+      </section>
+
+      <section aria-labelledby="mono-button-title">
+        <h2 id="mono-button-title">Shared <code>core.button</code></h2>
+        <p>The same <code>.ns-button</code> adapter consumes Mono tokens here. Hover/contact compresses inward by 2px; direct press seats the control by the full 3px.</p>
+        <button class="ns-button" id="mono-button" type="button">Press the editorial control</button>
+      </section>
+
+      <section aria-labelledby="mono-input-title">
+        <h2 id="mono-input-title">Shared <code>core.input</code></h2>
+        <p>The native editing surface remains non-pressable while inheriting Mono typography, keylines, square geometry, grayscale surface, and focus expression.</p>
+        <div class="input-example"><label for="mono-input">Editorial native input</label><input class="ns-input" id="mono-input" type="text" autocomplete="off" placeholder="Edit without false contact motion" /></div>
+      </section>
+
+      <section aria-labelledby="mono-card-title">
+        <h2 id="mono-card-title">Shared <code>core.card</code></h2>
+        <p>Mono depth is structural on informational surfaces. Static editorial content remains stable through hover and pointer contact.</p>
+        <article class="ns-card" id="mono-card" aria-labelledby="mono-card-heading"><header class="ns-card-header"><h3 class="ns-card-title" id="mono-card-heading">Stable editorial surface</h3><p class="ns-card-description">Hierarchy and keylines change expression, not behavior.</p></header><div class="ns-card-content"><p id="mono-localized-copy">A deliberately long localized-content example must wrap inside the page without creating horizontal overflow, even when reading direction changes and editorial labels become verbose.</p></div></article>
+      </section>
+
+      <section aria-labelledby="mono-badge-title">
+        <h2 id="mono-badge-title">Shared <code>core.badge</code></h2>
+        <p>Mono status surfaces stay grayscale. Written labels carry semantic meaning so color is never the only signal.</p>
+        <div class="badge-examples" aria-label="Mono status examples"><span class="ns-badge" id="mono-badge-info" data-tone="info">Info · Reference</span><span class="ns-badge" id="mono-badge-success" data-tone="success">Success · Ready</span><span class="ns-badge" id="mono-badge-warning" data-tone="warning">Warning · Check</span><span class="ns-badge" id="mono-badge-error" data-tone="error">Error · Failed</span></div>
+      </section>
+
+      <p><a href="../../">Return to the Rivet Light Core Foundry</a></p>
+    </main>
+  </body>
+</html>
