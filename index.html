@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="./pagination.css" />
     <link rel="stylesheet" href="./segmented-control.css" />
     <link rel="stylesheet" href="./tooltip.css" />
+    <link rel="stylesheet" href="./combobox.css" />
   </head>
   <body>
     <main>
@@ -170,6 +171,26 @@
           <a id="tooltip-next-focus" href="#principles">Continue without entering the tooltip</a>
         </div>
       </section>
+      <section aria-labelledby="combobox-slice">
+        <h2 id="combobox-slice">Implemented component: <code>core.combobox</code></h2>
+        <p>Editable single-selection Combobox keeps query text separate from committed selection. DOM focus stays on the editable control while active suggestions move through <code>aria-activedescendant</code>; only the separate disclosure trigger uses tactile compression.</p>
+        <div class="ns-combobox" id="combobox-demo" data-state="closed" data-query-state="query-empty" data-selection-state="unselected">
+          <label class="ns-combobox-label" for="combobox-input">Choose one framework</label>
+          <div class="ns-combobox-control">
+            <input class="ns-combobox-input" id="combobox-input" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="combobox-listbox" autocomplete="off" placeholder="Type to filter suggestions" />
+            <button class="ns-combobox-trigger" id="combobox-trigger" type="button" aria-label="Show suggestions" aria-controls="combobox-listbox">▼</button>
+          </div>
+          <div class="ns-combobox-popup" id="combobox-popup" hidden>
+            <div class="ns-combobox-list" id="combobox-listbox" role="listbox" aria-label="Framework suggestions">
+              <div class="ns-combobox-option" id="combobox-option-react" role="option" aria-selected="false" data-value="React">React</div>
+              <div class="ns-combobox-option" id="combobox-option-vue" role="option" aria-selected="false" data-value="Vue">Vue</div>
+              <div class="ns-combobox-option" id="combobox-option-svelte" role="option" aria-selected="false" aria-disabled="true" data-value="Svelte">Svelte · unavailable</div>
+              <div class="ns-combobox-option" id="combobox-option-solid" role="option" aria-selected="false" data-value="Solid">Solid</div>
+            </div>
+            <p class="ns-combobox-empty" id="combobox-empty" hidden>No matching suggestions</p>
+          </div>
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul><li>Restart the architecture, not the knowledge.</li><li>Source once. Demonstrate everywhere.</li><li>Pressure, not levitation.</li></ul>
@@ -186,6 +207,7 @@
       import { bindSelect } from './select.mjs';
       import { bindSegmentedControl } from './segmented-control.mjs';
       import { bindTooltip } from './tooltip.mjs';
+      import { bindCombobox } from './combobox.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
@@ -197,6 +219,7 @@
       bindSelect(document.querySelector('#select-demo'));
       bindSegmentedControl(document.querySelector('#segmented-control-demo'));
       bindTooltip(document.querySelector('#tooltip-target'));
+      bindCombobox(document.querySelector('#combobox-demo'));
     </script>
   </body>
 </html>
