@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="./field.css" />
     <link rel="stylesheet" href="./breadcrumb.css" />
     <link rel="stylesheet" href="./pagination.css" />
+    <link rel="stylesheet" href="./segmented-control.css" />
   </head>
   <body>
     <main>
@@ -41,17 +42,11 @@
         <p>The native checkbox remains the semantic control. A 44px token-backed hit target contains the smaller visual box, with checked and indeterminate state remaining distinct after contact feedback ends.</p>
         <div class="checkbox-examples">
           <div class="checkbox-row">
-            <span class="ns-checkbox">
-              <input class="ns-checkbox-input" id="checkbox-demo" type="checkbox" />
-              <span class="ns-checkbox-visual" aria-hidden="true"></span>
-            </span>
+            <span class="ns-checkbox"><input class="ns-checkbox-input" id="checkbox-demo" type="checkbox" /><span class="ns-checkbox-visual" aria-hidden="true"></span></span>
             <label for="checkbox-demo">Toggle tactile selection</label>
           </div>
           <div class="checkbox-row">
-            <span class="ns-checkbox">
-              <input class="ns-checkbox-input" id="checkbox-mixed" type="checkbox" />
-              <span class="ns-checkbox-visual" aria-hidden="true"></span>
-            </span>
+            <span class="ns-checkbox"><input class="ns-checkbox-input" id="checkbox-mixed" type="checkbox" /><span class="ns-checkbox-visual" aria-hidden="true"></span></span>
             <label for="checkbox-mixed">Indeterminate presentation</label>
           </div>
         </div>
@@ -59,42 +54,21 @@
       <section aria-labelledby="input-slice">
         <h2 id="input-slice">Public-proof component: <code>core.input</code></h2>
         <p>The native text input owns editing and selection. It is interactive, not pressable: hover, focus, and pointer contact never translate the field or simulate button compression.</p>
-        <div class="input-example">
-          <label for="input-demo">Single-line native input</label>
-          <input class="ns-input" id="input-demo" type="text" autocomplete="off" placeholder="Type without fake press motion" />
-        </div>
+        <div class="input-example"><label for="input-demo">Single-line native input</label><input class="ns-input" id="input-demo" type="text" autocomplete="off" placeholder="Type without fake press motion" /></div>
       </section>
       <section aria-labelledby="radio-slice">
         <h2 id="radio-slice">Public-proof component: <code>core.radio</code></h2>
         <p>Native radios preserve one-of-many selection and platform keyboard behavior. Contact compresses into the surface while checked state remains explicit across the whole group.</p>
         <fieldset class="radio-examples">
           <legend>Choose one native radio option</legend>
-          <div class="radio-row">
-            <span class="ns-radio">
-              <input class="ns-radio-input" id="radio-alpha" type="radio" name="radio-demo" value="alpha" checked />
-              <span class="ns-radio-visual" aria-hidden="true"></span>
-            </span>
-            <label for="radio-alpha">Alpha choice</label>
-          </div>
-          <div class="radio-row">
-            <span class="ns-radio">
-              <input class="ns-radio-input" id="radio-beta" type="radio" name="radio-demo" value="beta" />
-              <span class="ns-radio-visual" aria-hidden="true"></span>
-            </span>
-            <label for="radio-beta">Beta choice</label>
-          </div>
+          <div class="radio-row"><span class="ns-radio"><input class="ns-radio-input" id="radio-alpha" type="radio" name="radio-demo" value="alpha" checked /><span class="ns-radio-visual" aria-hidden="true"></span></span><label for="radio-alpha">Alpha choice</label></div>
+          <div class="radio-row"><span class="ns-radio"><input class="ns-radio-input" id="radio-beta" type="radio" name="radio-demo" value="beta" /><span class="ns-radio-visual" aria-hidden="true"></span></span><label for="radio-beta">Beta choice</label></div>
         </fieldset>
       </section>
       <section aria-labelledby="switch-slice">
         <h2 id="switch-slice">Public-proof component: <code>core.switch</code></h2>
         <p>A native checkbox base exposes switch semantics while checked state stays authoritative. Contact compresses the whole track; persistent state moves the thumb from logical inline-start to inline-end as track color resolves.</p>
-        <div class="switch-row">
-          <span class="ns-switch">
-            <input class="ns-switch-input" id="switch-demo" type="checkbox" role="switch" />
-            <span class="ns-switch-visual" aria-hidden="true"><span class="ns-switch-thumb"></span></span>
-          </span>
-          <label for="switch-demo">Toggle immediate binary setting</label>
-        </div>
+        <div class="switch-row"><span class="ns-switch"><input class="ns-switch-input" id="switch-demo" type="checkbox" role="switch" /><span class="ns-switch-visual" aria-hidden="true"><span class="ns-switch-thumb"></span></span></span><label for="switch-demo">Toggle immediate binary setting</label></div>
       </section>
       <section aria-labelledby="tabs-slice">
         <h2 id="tabs-slice">Public-proof component: <code>core.tabs</code></h2>
@@ -127,138 +101,69 @@
       <section aria-labelledby="textarea-slice">
         <h2 id="textarea-slice">Public-proof component: <code>core.textarea</code></h2>
         <p>The native multiline textarea preserves line breaks, selection, scrolling, IME, and resize behavior. It is interactive, not pressable: editing and resize contact never borrow button compression.</p>
-        <div class="textarea-example">
-          <label for="textarea-demo">Multiline native textarea</label>
-          <textarea class="ns-textarea" id="textarea-demo" rows="5" placeholder="Write multiple lines without fake press motion"></textarea>
-        </div>
+        <div class="textarea-example"><label for="textarea-demo">Multiline native textarea</label><textarea class="ns-textarea" id="textarea-demo" rows="5" placeholder="Write multiple lines without fake press motion"></textarea></div>
       </section>
       <section aria-labelledby="select-slice">
         <h2 id="select-slice">Public-proof component: <code>core.select</code></h2>
         <p>The native single-select owns its option picker and keyboard behavior. Only the collapsed choice trigger receives pressure feedback; NeoSmartUI does not replace the browser/OS option popup.</p>
         <div class="select-example">
           <label for="select-demo">Native single-select choice</label>
-          <select class="ns-select" id="select-demo" name="select-demo">
-            <option value="alpha">Alpha option</option>
-            <option value="beta">Beta option</option>
-            <optgroup label="More options">
-              <option value="gamma">Gamma option</option>
-              <option value="disabled" disabled>Unavailable option</option>
-            </optgroup>
-          </select>
+          <select class="ns-select" id="select-demo" name="select-demo"><option value="alpha">Alpha option</option><option value="beta">Beta option</option><optgroup label="More options"><option value="gamma">Gamma option</option><option value="disabled" disabled>Unavailable option</option></optgroup></select>
         </div>
       </section>
       <section aria-labelledby="card-slice">
         <h2 id="card-slice">Implemented component: <code>core.card</code></h2>
         <p>The generic Card groups information without inventing activation. Its resting depth is structural and remains unchanged on hover or pointer contact.</p>
-        <div class="card-example">
-          <article class="ns-card" id="card-demo" aria-labelledby="card-demo-title">
-            <header class="ns-card-header">
-              <h3 class="ns-card-title" id="card-demo-title">Stable informational surface</h3>
-              <p class="ns-card-description">Grouped content, not a disguised button.</p>
-            </header>
-            <div class="ns-card-content">
-              <p>Informational cards remain motionless while interactive descendants, when present, own their own semantics.</p>
-            </div>
-            <footer class="ns-card-footer">
-              <p>Resting depth is structure, not hover affordance.</p>
-            </footer>
-          </article>
-        </div>
+        <div class="card-example"><article class="ns-card" id="card-demo" aria-labelledby="card-demo-title"><header class="ns-card-header"><h3 class="ns-card-title" id="card-demo-title">Stable informational surface</h3><p class="ns-card-description">Grouped content, not a disguised button.</p></header><div class="ns-card-content"><p>Informational cards remain motionless while interactive descendants, when present, own their own semantics.</p></div><footer class="ns-card-footer"><p>Resting depth is structure, not hover affordance.</p></footer></article></div>
       </section>
       <section aria-labelledby="badge-slice">
         <h2 id="badge-slice">Implemented component: <code>core.badge</code></h2>
         <p>Badges communicate compact metadata or status without manufacturing activation or a live region. Tone supports the visible text instead of replacing meaning with color.</p>
-        <div class="badge-examples" aria-label="Badge tone examples">
-          <span class="ns-badge" id="badge-neutral" data-tone="neutral">Neutral metadata</span>
-          <span class="ns-badge" id="badge-info" data-tone="info">Info · Reference</span>
-          <span class="ns-badge" id="badge-success" data-tone="success">Success · Ready</span>
-          <span class="ns-badge" id="badge-warning" data-tone="warning">Warning · Needs attention</span>
-          <span class="ns-badge" id="badge-error" data-tone="error">Error · Failed</span>
-        </div>
+        <div class="badge-examples" aria-label="Badge tone examples"><span class="ns-badge" id="badge-neutral" data-tone="neutral">Neutral metadata</span><span class="ns-badge" id="badge-info" data-tone="info">Info · Reference</span><span class="ns-badge" id="badge-success" data-tone="success">Success · Ready</span><span class="ns-badge" id="badge-warning" data-tone="warning">Warning · Needs attention</span><span class="ns-badge" id="badge-error" data-tone="error">Error · Failed</span></div>
       </section>
       <section aria-labelledby="alert-slice">
         <h2 id="alert-slice">Implemented component: <code>core.alert</code></h2>
         <p>Alerts are stable message surfaces, not implicit live regions. Tone supports explicit written meaning; announcement urgency remains a composition decision.</p>
         <div class="alert-examples" aria-label="Alert tone examples">
-          <div class="ns-alert" id="alert-neutral" data-tone="neutral">
-            <p class="ns-alert-title">Neutral · Note</p>
-            <p class="ns-alert-body">Static message surface; no implicit live region.</p>
-          </div>
-          <div class="ns-alert" id="alert-info" data-tone="info">
-            <p class="ns-alert-title">Info · Update</p>
-            <p class="ns-alert-body">Reference information is available without demanding immediate interruption.</p>
-          </div>
-          <div class="ns-alert" id="alert-success" data-tone="success">
-            <p class="ns-alert-title">Success · Complete</p>
-            <p class="ns-alert-body">The visible message carries success meaning even when custom color is unavailable.</p>
-          </div>
-          <div class="ns-alert" id="alert-warning" data-tone="warning">
-            <p class="ns-alert-title">Warning · Check this</p>
-            <p class="ns-alert-body">Attention is useful, but this static callout is not automatically an assertive announcement.</p>
-          </div>
-          <div class="ns-alert" id="alert-error" data-tone="error">
-            <p class="ns-alert-title">Error · Needs correction</p>
-            <p class="ns-alert-body">Error text remains explicit instead of relying on a red border alone.</p>
-          </div>
+          <div class="ns-alert" id="alert-neutral" data-tone="neutral"><p class="ns-alert-title">Neutral · Note</p><p class="ns-alert-body">Static message surface; no implicit live region.</p></div>
+          <div class="ns-alert" id="alert-info" data-tone="info"><p class="ns-alert-title">Info · Update</p><p class="ns-alert-body">Reference information is available without demanding immediate interruption.</p></div>
+          <div class="ns-alert" id="alert-success" data-tone="success"><p class="ns-alert-title">Success · Complete</p><p class="ns-alert-body">The visible message carries success meaning even when custom color is unavailable.</p></div>
+          <div class="ns-alert" id="alert-warning" data-tone="warning"><p class="ns-alert-title">Warning · Check this</p><p class="ns-alert-body">Attention is useful, but this static callout is not automatically an assertive announcement.</p></div>
+          <div class="ns-alert" id="alert-error" data-tone="error"><p class="ns-alert-title">Error · Needs correction</p><p class="ns-alert-body">Error text remains explicit instead of relying on a red border alone.</p></div>
         </div>
       </section>
       <section aria-labelledby="field-slice">
         <h2 id="field-slice">Implemented component: <code>core.field</code></h2>
         <p>Field composes one real control with its label, help, and validation relationships. The container is not a group, action, or live region; semantics stay on the actual control and associated text.</p>
         <div class="field-examples" aria-label="Field semantic examples">
-          <div class="ns-field" id="field-normal-demo">
-            <label class="ns-field-label" for="field-email">Email address</label>
-            <input class="ns-input" id="field-email" type="email" autocomplete="off" aria-describedby="field-email-help" />
-            <p class="ns-field-description" id="field-email-help">Use an address where account notices can reach you.</p>
-          </div>
-          <div class="ns-field" id="field-invalid-demo">
-            <label class="ns-field-label" for="field-code">Invite code</label>
-            <input class="ns-input" id="field-code" type="text" value="expired-code" aria-invalid="true" aria-describedby="field-code-help" aria-errormessage="field-code-error" />
-            <p class="ns-field-description" id="field-code-help">Codes are case-sensitive and may expire.</p>
-            <p class="ns-field-message" id="field-code-error">This invite code has expired. Request a new code.</p>
-          </div>
-          <div class="ns-field" id="field-disabled-demo">
-            <label class="ns-field-label" for="field-locked">Locked setting</label>
-            <input class="ns-input" id="field-locked" type="text" value="Managed by your workspace" disabled aria-describedby="field-locked-help" />
-            <p class="ns-field-description" id="field-locked-help">The disabled state belongs to the real control, not the Field container.</p>
-          </div>
+          <div class="ns-field" id="field-normal-demo"><label class="ns-field-label" for="field-email">Email address</label><input class="ns-input" id="field-email" type="email" autocomplete="off" aria-describedby="field-email-help" /><p class="ns-field-description" id="field-email-help">Use an address where account notices can reach you.</p></div>
+          <div class="ns-field" id="field-invalid-demo"><label class="ns-field-label" for="field-code">Invite code</label><input class="ns-input" id="field-code" type="text" value="expired-code" aria-invalid="true" aria-describedby="field-code-help" aria-errormessage="field-code-error" /><p class="ns-field-description" id="field-code-help">Codes are case-sensitive and may expire.</p><p class="ns-field-message" id="field-code-error">This invite code has expired. Request a new code.</p></div>
+          <div class="ns-field" id="field-disabled-demo"><label class="ns-field-label" for="field-locked">Locked setting</label><input class="ns-input" id="field-locked" type="text" value="Managed by your workspace" disabled aria-describedby="field-locked-help" /><p class="ns-field-description" id="field-locked-help">The disabled state belongs to the real control, not the Field container.</p></div>
         </div>
       </section>
       <section aria-labelledby="breadcrumb-slice">
         <h2 id="breadcrumb-slice">Implemented component: <code>core.breadcrumb</code></h2>
         <p>Breadcrumb exposes a real ordered location hierarchy. Ancestor locations stay native links, separators and passive ellipsis are presentation-only, and the current page is non-interactive text with <code>aria-current="page"</code>.</p>
-        <nav class="ns-breadcrumb breadcrumb-example" id="breadcrumb-demo" aria-label="Breadcrumb">
-          <ol class="ns-breadcrumb-list">
-            <li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-components" href="#button-slice">Components</a></li>
-            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
-            <li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-forms" href="#field-slice">Forms</a></li>
-            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
-            <li class="ns-breadcrumb-ellipsis" aria-hidden="true">…</li>
-            <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
-            <li class="ns-breadcrumb-item"><span class="ns-breadcrumb-current" id="breadcrumb-current" aria-current="page">Breadcrumb</span></li>
-          </ol>
-        </nav>
+        <nav class="ns-breadcrumb breadcrumb-example" id="breadcrumb-demo" aria-label="Breadcrumb"><ol class="ns-breadcrumb-list"><li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-components" href="#button-slice">Components</a></li><li class="ns-breadcrumb-separator" aria-hidden="true">/</li><li class="ns-breadcrumb-item"><a class="ns-breadcrumb-link" id="breadcrumb-forms" href="#field-slice">Forms</a></li><li class="ns-breadcrumb-separator" aria-hidden="true">/</li><li class="ns-breadcrumb-ellipsis" aria-hidden="true">…</li><li class="ns-breadcrumb-separator" aria-hidden="true">/</li><li class="ns-breadcrumb-item"><span class="ns-breadcrumb-current" id="breadcrumb-current" aria-current="page">Breadcrumb</span></li></ol></nav>
       </section>
       <section aria-labelledby="pagination-slice">
         <h2 id="pagination-slice">Implemented component: <code>core.pagination</code></h2>
         <p>Pagination keeps page destinations as native links with 44px tactile targets. The current page is non-interactive text with <code>aria-current="page"</code>, unavailable boundaries stay non-operable, and passive ellipsis never becomes a fake control.</p>
-        <nav class="ns-pagination pagination-example" id="pagination-demo" aria-label="Pagination">
-          <span class="ns-pagination-unavailable" id="pagination-previous-unavailable" aria-disabled="true">Previous</span>
-          <a class="ns-pagination-link" id="pagination-page-1" href="#page-1" aria-label="Page 1">1</a>
-          <span class="ns-pagination-current" id="pagination-current" aria-current="page">2</span>
-          <a class="ns-pagination-link" id="pagination-page-3" href="#page-3" aria-label="Page 3">3</a>
-          <span class="ns-pagination-ellipsis" id="pagination-ellipsis" aria-hidden="true">…</span>
-          <a class="ns-pagination-link" id="pagination-page-8" href="#page-8" aria-label="Page 8">8</a>
-          <a class="ns-pagination-link" id="pagination-next" href="#page-3" aria-label="Next page">Next</a>
-        </nav>
+        <nav class="ns-pagination pagination-example" id="pagination-demo" aria-label="Pagination"><span class="ns-pagination-unavailable" id="pagination-previous-unavailable" aria-disabled="true">Previous</span><a class="ns-pagination-link" id="pagination-page-1" href="#page-1" aria-label="Page 1">1</a><span class="ns-pagination-current" id="pagination-current" aria-current="page">2</span><a class="ns-pagination-link" id="pagination-page-3" href="#page-3" aria-label="Page 3">3</a><span class="ns-pagination-ellipsis" id="pagination-ellipsis" aria-hidden="true">…</span><a class="ns-pagination-link" id="pagination-page-8" href="#page-8" aria-label="Page 8">8</a><a class="ns-pagination-link" id="pagination-next" href="#page-3" aria-label="Next page">Next</a></nav>
+      </section>
+      <section aria-labelledby="segmented-control-slice">
+        <h2 id="segmented-control-slice">Implemented component: <code>core.segmented-control</code></h2>
+        <p>Segmented Control chooses one peer mode with real buttons and persistent <code>aria-pressed</code> state. It keeps normal Tab, Space, and Enter button behavior; it does not borrow Tabs roving focus or form-value Radio semantics.</p>
+        <div class="ns-segmented-control segmented-control-example" id="segmented-control-demo" role="group" aria-label="View mode">
+          <button class="ns-segmented-control-segment" id="segment-overview" type="button" aria-pressed="true">Overview</button>
+          <button class="ns-segmented-control-segment" id="segment-activity" type="button" aria-pressed="false">Activity</button>
+          <button class="ns-segmented-control-segment" id="segment-history" type="button" aria-pressed="false">History</button>
+          <button class="ns-segmented-control-segment" id="segment-unavailable" type="button" aria-pressed="false" disabled>Unavailable</button>
+        </div>
       </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
-        <ul>
-          <li>Restart the architecture, not the knowledge.</li>
-          <li>Source once. Demonstrate everywhere.</li>
-          <li>Pressure, not levitation.</li>
-        </ul>
+        <ul><li>Restart the architecture, not the knowledge.</li><li>Source once. Demonstrate everywhere.</li><li>Pressure, not levitation.</li></ul>
       </section>
       <p class="footnote">This page may display implemented slices, but registry maturity reaches <code>public-proof</code> only after deployed, verified evidence exists.</p>
     </main>
@@ -270,6 +175,7 @@
       import { bindTabs } from './tabs.mjs';
       import { bindTextarea } from './textarea.mjs';
       import { bindSelect } from './select.mjs';
+      import { bindSegmentedControl } from './segmented-control.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
@@ -279,6 +185,7 @@
       bindTabs(document.querySelector('#tabs-manual-list'));
       bindTextarea(document.querySelector('#textarea-demo'));
       bindSelect(document.querySelector('#select-demo'));
+      bindSegmentedControl(document.querySelector('#segmented-control-demo'));
     </script>
   </body>
 </html>
