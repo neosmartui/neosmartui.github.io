@@ -38,7 +38,18 @@ ul { margin-bottom: 0; padding-left: 1.25rem; }
 .breadcrumb-example { max-inline-size: 48rem; margin-top: 1.25rem; }
 .pagination-example { max-inline-size: 52rem; margin-top: 1.25rem; }
 .segmented-control-example { max-inline-size: 48rem; margin-top: 1.25rem; }
+.tooltip-examples { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; min-inline-size: 0; max-inline-size: 100%; margin-top: 1.25rem; padding-block-end: 3rem; }
+.tooltip-example { position: relative; display: inline-flex; align-items: center; min-inline-size: 0; max-inline-size: 100%; }
+.tooltip-example > a, #tooltip-next-focus { min-inline-size: 0; max-inline-size: 100%; overflow-wrap: anywhere; }
 .footnote { margin-top: 2rem; font-size: 0.95rem; }
+@media (max-width: 560px) {
+  .tabs-examples,
+  .tabs-examples > .ns-tabs,
+  .tabs-examples .ns-tabs-list,
+  .tabs-examples .ns-tabs-panel { min-inline-size: 0; max-inline-size: 100%; }
+  .tabs-examples .ns-tabs-list[aria-orientation="horizontal"] { overflow-x: auto; overflow-y: hidden; }
+  .tabs-examples .ns-tabs-panel { overflow-wrap: anywhere; }
+}
 @media (prefers-color-scheme: dark) {
   :root { color: #f8f4ea; background: #151515; }
   section { background: #222; }

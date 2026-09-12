@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="./breadcrumb.css" />
     <link rel="stylesheet" href="./pagination.css" />
     <link rel="stylesheet" href="./segmented-control.css" />
+    <link rel="stylesheet" href="./tooltip.css" />
   </head>
   <body>
     <main>
@@ -161,6 +162,14 @@
           <button class="ns-segmented-control-segment" id="segment-unavailable" type="button" aria-pressed="false" disabled>Unavailable</button>
         </div>
       </section>
+      <section aria-labelledby="tooltip-slice">
+        <h2 id="tooltip-slice">Implemented component: <code>core.tooltip</code></h2>
+        <p>Tooltip keeps supplemental descriptions non-interactive: keyboard focus remains on the described target, Escape dismisses the surface, and reveal never moves the target.</p>
+        <div class="tooltip-examples">
+          <span class="tooltip-example" id="tooltip-example"><a id="tooltip-target" href="#principles" aria-describedby="tooltip-demo">Read the permanent interaction rules</a><span class="ns-tooltip" id="tooltip-demo" role="tooltip" data-state="closed">Supplemental descriptions stay non-interactive and never move their target.</span></span>
+          <a id="tooltip-next-focus" href="#principles">Continue without entering the tooltip</a>
+        </div>
+      </section>
       <section aria-labelledby="principles">
         <h2 id="principles">Permanent rules</h2>
         <ul><li>Restart the architecture, not the knowledge.</li><li>Source once. Demonstrate everywhere.</li><li>Pressure, not levitation.</li></ul>
@@ -176,6 +185,7 @@
       import { bindTextarea } from './textarea.mjs';
       import { bindSelect } from './select.mjs';
       import { bindSegmentedControl } from './segmented-control.mjs';
+      import { bindTooltip } from './tooltip.mjs';
       bindCheckbox(document.querySelector('#checkbox-demo'));
       bindCheckbox(document.querySelector('#checkbox-mixed'), { indeterminate: true });
       bindInput(document.querySelector('#input-demo'));
@@ -186,6 +196,7 @@
       bindTextarea(document.querySelector('#textarea-demo'));
       bindSelect(document.querySelector('#select-demo'));
       bindSegmentedControl(document.querySelector('#segmented-control-demo'));
+      bindTooltip(document.querySelector('#tooltip-target'));
     </script>
   </body>
 </html>
