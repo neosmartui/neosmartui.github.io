@@ -1,0 +1,135 @@
+.ns-pagination {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--ns-space-navigation-gap);
+  min-inline-size: 0;
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-navigation);
+}
+
+.ns-pagination-link,
+.ns-pagination-current,
+.ns-pagination-unavailable,
+.ns-pagination-ellipsis {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-inline-size: var(--ns-size-control-minimum);
+  min-block-size: var(--ns-size-control-minimum);
+  padding-block: var(--ns-space-control-block);
+  padding-inline: var(--ns-space-control-inline);
+  border: var(--ns-border-control-width) solid var(--ns-color-border-strong);
+  border-radius: var(--ns-radius-control);
+  font: inherit;
+  font-weight: var(--ns-font-weight-emphasis);
+  line-height: 1;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.ns-pagination-link {
+  background: var(--ns-color-surface-interactive);
+  color: var(--ns-color-content-primary);
+  box-shadow: var(--ns-depth-rest-x) var(--ns-depth-rest-y) 0 var(--ns-color-border-strong);
+  text-decoration: none;
+  cursor: pointer;
+  transform: translate(0, 0);
+  transition-property: transform, box-shadow, opacity;
+  transition-duration: var(--ns-motion-release-duration);
+  transition-timing-function: var(--ns-motion-release-easing);
+}
+
+.ns-pagination-link:visited {
+  color: var(--ns-color-content-primary);
+}
+
+@media (hover: hover) {
+  .ns-pagination-link:hover {
+    transform: translate(var(--ns-press-hover-x), var(--ns-press-hover-y));
+    box-shadow: var(--ns-depth-hover-x) var(--ns-depth-hover-y) 0 var(--ns-color-border-strong);
+    transition-duration: var(--ns-motion-press-duration);
+    transition-timing-function: var(--ns-motion-press-easing);
+  }
+}
+
+.ns-pagination-link:active {
+  transform: translate(var(--ns-press-active-x), var(--ns-press-active-y));
+  box-shadow: var(--ns-depth-active-x) var(--ns-depth-active-y) 0 var(--ns-color-border-strong);
+  transition-duration: var(--ns-motion-press-duration);
+  transition-timing-function: var(--ns-motion-press-easing);
+}
+
+.ns-pagination-link:focus-visible {
+  outline: var(--ns-focus-ring-width) solid var(--ns-color-focus-ring);
+  outline-offset: var(--ns-focus-ring-offset);
+}
+
+.ns-pagination-current {
+  background: var(--ns-color-action-primary-surface);
+  color: var(--ns-color-action-primary-content);
+  box-shadow: var(--ns-depth-active-x) var(--ns-depth-active-y) 0 var(--ns-color-border-strong);
+  transform: none;
+  transition: none;
+}
+
+.ns-pagination-unavailable {
+  background: var(--ns-color-surface-interactive);
+  color: var(--ns-color-content-primary);
+  box-shadow: none;
+  opacity: var(--ns-opacity-disabled);
+  cursor: not-allowed;
+  transform: none;
+  transition: none;
+}
+
+.ns-pagination-ellipsis {
+  min-inline-size: auto;
+  padding-inline: var(--ns-space-navigation-gap);
+  border-color: transparent;
+  background: transparent;
+  color: var(--ns-color-content-primary);
+  box-shadow: none;
+  transform: none;
+  transition: none;
+  user-select: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-pagination-link { transition-duration: 1ms; }
+}
+
+@media (forced-colors: active) {
+  .ns-pagination-link,
+  .ns-pagination-current,
+  .ns-pagination-unavailable {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+    forced-color-adjust: auto;
+  }
+
+  .ns-pagination-link {
+    box-shadow: 5px 5px 0 ButtonText;
+  }
+
+  .ns-pagination-link:focus-visible {
+    outline-color: Highlight;
+  }
+
+  .ns-pagination-current {
+    border-style: double;
+    border-width: max(var(--ns-border-control-width), 3px);
+    font-weight: var(--ns-font-weight-emphasis);
+  }
+
+  .ns-pagination-unavailable {
+    color: GrayText;
+  }
+
+  .ns-pagination-ellipsis {
+    color: CanvasText;
+    border-color: transparent;
+    forced-color-adjust: auto;
+  }
+}

@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./alert.css" />
     <link rel="stylesheet" href="./field.css" />
     <link rel="stylesheet" href="./breadcrumb.css" />
+    <link rel="stylesheet" href="./pagination.css" />
   </head>
   <body>
     <main>
@@ -236,6 +237,19 @@
             <li class="ns-breadcrumb-separator" aria-hidden="true">/</li>
             <li class="ns-breadcrumb-item"><span class="ns-breadcrumb-current" id="breadcrumb-current" aria-current="page">Breadcrumb</span></li>
           </ol>
+        </nav>
+      </section>
+      <section aria-labelledby="pagination-slice">
+        <h2 id="pagination-slice">Implemented component: <code>core.pagination</code></h2>
+        <p>Pagination keeps page destinations as native links with 44px tactile targets. The current page is non-interactive text with <code>aria-current="page"</code>, unavailable boundaries stay non-operable, and passive ellipsis never becomes a fake control.</p>
+        <nav class="ns-pagination pagination-example" id="pagination-demo" aria-label="Pagination">
+          <span class="ns-pagination-unavailable" id="pagination-previous-unavailable" aria-disabled="true">Previous</span>
+          <a class="ns-pagination-link" id="pagination-page-1" href="#page-1" aria-label="Page 1">1</a>
+          <span class="ns-pagination-current" id="pagination-current" aria-current="page">2</span>
+          <a class="ns-pagination-link" id="pagination-page-3" href="#page-3" aria-label="Page 3">3</a>
+          <span class="ns-pagination-ellipsis" id="pagination-ellipsis" aria-hidden="true">…</span>
+          <a class="ns-pagination-link" id="pagination-page-8" href="#page-8" aria-label="Page 8">8</a>
+          <a class="ns-pagination-link" id="pagination-next" href="#page-3" aria-label="Next page">Next</a>
         </nav>
       </section>
       <section aria-labelledby="principles">

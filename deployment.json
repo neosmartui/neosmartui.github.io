@@ -1,6 +1,6 @@
 {
   "schema": "neosmartui/deployment-record@1",
   "sourceRepository": "neosmartui/neosmartui",
-  "sourceSha": "1cc08cf241dfbd977d3afd999160ff015c8e060f",
+  "sourceSha": "7f88b4086286f14721f31a6d5c4e3aae616caa97",
   "artifact": "foundry"
 }
