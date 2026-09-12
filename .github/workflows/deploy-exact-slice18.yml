@@ -1,0 +1,78 @@
+name: Deploy exact Slice 18 Foundry
+
+on:
+  push:
+    branches:
+      - deploy/slice18-accordion-57dc766e
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out current Pages main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: pages
+
+      - name: Check out verified NeoSmartUI source
+        uses: actions/checkout@v4
+        with:
+          repository: neosmartui/neosmartui
+          ref: 57dc766ece8eca13b8c60b6f14615692ecdb51e8
+          path: source
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Reproduce exact merged-main Foundry
+        working-directory: source
+        env:
+          NEOSMARTUI_SOURCE_SHA: 57dc766ece8eca13b8c60b6f14615692ecdb51e8
+        run: npm run build:foundry
+
+      - name: Verify artifact identity and unchanged cohort files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git -C pages rev-parse HEAD)" = "3d20426f83cb2a30431c36300f4f842efdbe3de9"
+          test "$(git hash-object source/dist/foundry/accordion.css)" = "e0d494ff63973bd39d6815583f643e01b394ffe1"
+          test "$(git hash-object source/dist/foundry/accordion.mjs)" = "f81715844ed9c180279ad9a9257ccb9956cb7fd6"
+          test "$(git hash-object source/dist/foundry/index.html)" = "fb3f093f1662c0395111ac24b26f396a7c28b2b1"
+          test "$(git hash-object source/dist/foundry/deployment.json)" = "bcb20e0ed7a99937a6cb9d53dca36efd90c62038"
+          python3 - <<'PY'
+          from pathlib import Path
+          src = Path('source/dist/foundry')
+          pages = Path('pages')
+          src_files = {p.relative_to(src).as_posix() for p in src.rglob('*') if p.is_file()}
+          page_files = {p.relative_to(pages).as_posix() for p in pages.iterdir() if p.is_file()}
+          expected_src = page_files | {'accordion.css', 'accordion.mjs'}
+          if src_files != expected_src:
+              raise SystemExit(f'file-set mismatch: source={sorted(src_files)} pages+accordion={sorted(expected_src)}')
+          changed = {'index.html', 'deployment.json'}
+          for rel in sorted(page_files - changed):
+              if (src / rel).read_bytes() != (pages / rel).read_bytes():
+                  raise SystemExit(f'unexpected unchanged-file drift: {rel}')
+          print(f'verified {len(src_files)} exact deploy files; existing unchanged cohort is byte-identical')
+          PY
+
+      - name: Materialize exact artifact on Pages main
+        shell: bash
+        run: |
+          set -euo pipefail
+          find pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a source/dist/foundry/. pages/
+          cd pages
+          git add -A
+          mapfile -t changed < <(git diff --cached --name-only | sort)
+          expected=(accordion.css accordion.mjs deployment.json index.html)
+          test "${changed[*]}" = "${expected[*]}"
+          git config user.name "MrGPT007"
+          git config user.email "mrgpt.net@gmail.com"
+          git commit -m "deploy: Foundry from neosmartui/neosmartui@57dc766ece8eca13b8c60b6f14615692ecdb51e8"
+          git push origin HEAD:main
