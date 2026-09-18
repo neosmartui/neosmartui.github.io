@@ -99,7 +99,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ns-checkbox-visual { transition-duration: 1ms; }
+  .ns-checkbox-visual { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {

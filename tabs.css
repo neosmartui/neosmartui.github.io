@@ -87,7 +87,7 @@
 @media (prefers-reduced-motion: reduce) {
   .ns-tab,
   .ns-tabs-panel {
-    transition-duration: 1ms;
+    transition-duration: 1ms !important;
   }
 }
 

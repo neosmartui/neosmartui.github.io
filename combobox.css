@@ -196,7 +196,7 @@
   .ns-combobox-input,
   .ns-combobox-trigger,
   .ns-combobox-popup {
-    transition-duration: 1ms;
+    transition-duration: 1ms !important;
   }
 }
 

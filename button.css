@@ -48,7 +48,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ns-button { transition-duration: 1ms; }
+  .ns-button { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {

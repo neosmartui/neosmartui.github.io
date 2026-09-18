@@ -92,7 +92,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .ns-switch-visual,
-  .ns-switch-thumb { transition-duration: 1ms; }
+  .ns-switch-thumb { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {

@@ -53,7 +53,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ns-select { transition-duration: 1ms; }
+  .ns-select { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {

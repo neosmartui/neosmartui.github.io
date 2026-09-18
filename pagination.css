@@ -96,7 +96,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ns-pagination-link { transition-duration: 1ms; }
+  .ns-pagination-link { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {

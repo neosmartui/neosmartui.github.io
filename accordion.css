@@ -102,7 +102,7 @@
 @media (prefers-reduced-motion: reduce) {
   .ns-accordion-trigger,
   .ns-accordion-indicator {
-    transition-duration: 1ms;
+    transition-duration: 1ms !important;
   }
 }
 

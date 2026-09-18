@@ -89,7 +89,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ns-radio-visual { transition-duration: 1ms; }
+  .ns-radio-visual { transition-duration: 1ms !important; }
 }
 
 @media (forced-colors: active) {
