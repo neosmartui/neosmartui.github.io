@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.badge",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#badge-neutral"
+    },
+    "neutral": {
+      "mode": "fixture",
+      "target": "#badge-neutral"
+    },
+    "info": {
+      "mode": "fixture",
+      "target": "#badge-info"
+    },
+    "success": {
+      "mode": "fixture",
+      "target": "#badge-success"
+    },
+    "warning": {
+      "mode": "fixture",
+      "target": "#badge-warning"
+    },
+    "error": {
+      "mode": "fixture",
+      "target": "#badge-error"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/badge.css"
+      ],
+      "bindings": []
+    }
+  }
+}

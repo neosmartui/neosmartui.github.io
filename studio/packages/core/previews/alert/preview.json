@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.alert",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#alert-neutral"
+    },
+    "neutral": {
+      "mode": "fixture",
+      "target": "#alert-neutral"
+    },
+    "info": {
+      "mode": "fixture",
+      "target": "#alert-info"
+    },
+    "success": {
+      "mode": "fixture",
+      "target": "#alert-success"
+    },
+    "warning": {
+      "mode": "fixture",
+      "target": "#alert-warning"
+    },
+    "error": {
+      "mode": "fixture",
+      "target": "#alert-error"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/alert.css"
+      ],
+      "bindings": []
+    }
+  }
+}

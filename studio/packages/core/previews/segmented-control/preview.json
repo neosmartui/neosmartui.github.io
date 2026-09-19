@@ -1,0 +1,50 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.segmented-control",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#segment-activity"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#segment-activity"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#segment-activity"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#segment-activity"
+    },
+    "selected": {
+      "mode": "fixture",
+      "target": "#segment-overview"
+    },
+    "disabled": {
+      "mode": "fixture",
+      "target": "#segment-unavailable"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/segmented-control.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/segmented-control.mjs",
+          "export": "bindSegmentedControl",
+          "selector": "#segmented-control-demo"
+        }
+      ]
+    }
+  }
+}

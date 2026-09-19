@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../spec/schemas/flavor.schema.json",
+  "schema": "neosmartui/flavor@1",
+  "id": "flavor.soft",
+  "name": "Soft",
+  "intent": "Calm application-oriented neo-brutalist expression for long-session interfaces with moderate rounding, visible structure, shallow hard depth, warm neutral surfaces, softened blue accents, seated selection, and pressure-not-levitation interaction.",
+  "interactionModel": "pressure-not-levitation"
+}

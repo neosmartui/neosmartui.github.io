@@ -1,0 +1,24 @@
+        <div class="tabs-examples">
+          <div class="ns-tabs" id="tabs-auto-demo">
+            <p class="tabs-example-label">Automatic horizontal activation</p>
+            <div class="ns-tabs-list" id="tabs-auto-list" role="tablist" aria-label="Automatic tabs" aria-orientation="horizontal" data-activation="automatic">
+              <button class="ns-tab" id="tab-auto-overview" type="button" role="tab" aria-selected="true" aria-controls="panel-auto-overview">Overview</button>
+              <button class="ns-tab" id="tab-auto-disabled" type="button" role="tab" aria-selected="false" aria-controls="panel-auto-disabled" disabled>Unavailable</button>
+              <button class="ns-tab" id="tab-auto-details" type="button" role="tab" aria-selected="false" aria-controls="panel-auto-details">Details</button>
+            </div>
+            <div class="ns-tabs-panel" id="panel-auto-overview" role="tabpanel" aria-labelledby="tab-auto-overview">Automatic activation changes the selected panel as roving focus moves.</div>
+            <div class="ns-tabs-panel" id="panel-auto-disabled" role="tabpanel" aria-labelledby="tab-auto-disabled">Disabled panel content is not selected through keyboard navigation.</div>
+            <div class="ns-tabs-panel" id="panel-auto-details" role="tabpanel" aria-labelledby="tab-auto-details">Logical keyboard navigation skips the disabled middle tab.</div>
+          </div>
+          <div class="ns-tabs" id="tabs-manual-demo">
+            <p class="tabs-example-label">Manual vertical activation</p>
+            <div class="ns-tabs-list" id="tabs-manual-list" role="tablist" aria-label="Manual tabs" aria-orientation="vertical" data-activation="manual">
+              <button class="ns-tab" id="tab-manual-alpha" type="button" role="tab" aria-selected="true" aria-controls="panel-manual-alpha">Alpha</button>
+              <button class="ns-tab" id="tab-manual-beta" type="button" role="tab" aria-selected="false" aria-controls="panel-manual-beta">Beta</button>
+              <button class="ns-tab" id="tab-manual-gamma" type="button" role="tab" aria-selected="false" aria-controls="panel-manual-gamma">Gamma</button>
+            </div>
+            <div class="ns-tabs-panel" id="panel-manual-alpha" role="tabpanel" aria-labelledby="tab-manual-alpha">Manual activation keeps selection here until Space or Enter confirms the focused tab.</div>
+            <div class="ns-tabs-panel" id="panel-manual-beta" role="tabpanel" aria-labelledby="tab-manual-beta">Beta panel.</div>
+            <div class="ns-tabs-panel" id="panel-manual-gamma" role="tabpanel" aria-labelledby="tab-manual-gamma">Gamma panel.</div>
+          </div>
+        </div>

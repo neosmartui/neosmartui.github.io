@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.accordion",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#accordion-single-trigger-b"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#accordion-single-trigger-b"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#accordion-single-trigger-b"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#accordion-single-trigger-b"
+    },
+    "closed": {
+      "mode": "fixture",
+      "target": "#accordion-single-trigger-b"
+    },
+    "open": {
+      "mode": "controller",
+      "target": "#accordion-single-trigger-b"
+    },
+    "disabled": {
+      "mode": "fixture",
+      "target": "#accordion-single-trigger-disabled"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/accordion.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/accordion.mjs",
+          "export": "bindAccordion",
+          "selector": "#accordion-single-demo"
+        },
+        {
+          "module": "packages/adapters/web/components/accordion.mjs",
+          "export": "bindAccordion",
+          "selector": "#accordion-multiple-demo"
+        }
+      ]
+    }
+  }
+}

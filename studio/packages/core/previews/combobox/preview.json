@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.combobox",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#combobox-demo"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#combobox-trigger"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#combobox-input"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#combobox-trigger"
+    },
+    "closed": {
+      "mode": "fixture",
+      "target": "#combobox-demo"
+    },
+    "open": {
+      "mode": "controller",
+      "target": "#combobox-demo"
+    },
+    "query-empty": {
+      "mode": "fixture",
+      "target": "#combobox-input"
+    },
+    "query-filled": {
+      "mode": "controller",
+      "target": "#combobox-input"
+    },
+    "highlighted": {
+      "mode": "controller",
+      "target": "#combobox-option-react"
+    },
+    "selected": {
+      "mode": "controller",
+      "target": "#combobox-option-react"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#combobox-input"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#combobox-input"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/combobox.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/combobox.mjs",
+          "export": "bindCombobox",
+          "selector": "#combobox-demo"
+        }
+      ]
+    }
+  }
+}

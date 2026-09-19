@@ -1,0 +1,31 @@
+{
+  "sourceSha": "21147fdd8b97e60635d1c7d635bb463e73a616cf",
+  "flavorPaths": [
+    "packages/flavors/hardline/flavor.json",
+    "packages/flavors/mono/flavor.json",
+    "packages/flavors/rivet/flavor.json",
+    "packages/flavors/soft/flavor.json"
+  ],
+  "builtInThemes": {
+    "hardline": {
+      "label": "Hardline",
+      "light": "packages/themes/hardline-light",
+      "dark": "packages/themes/hardline-dark"
+    },
+    "soft": {
+      "label": "Soft",
+      "light": "packages/themes/soft-light",
+      "dark": "packages/themes/soft-dark"
+    },
+    "rivet": {
+      "label": "Rivet",
+      "light": "packages/themes/rivet-light",
+      "dark": "packages/themes/rivet-dark"
+    },
+    "mono": {
+      "label": "Mono",
+      "light": "packages/themes/mono-light",
+      "dark": "packages/themes/mono-dark"
+    }
+  }
+}

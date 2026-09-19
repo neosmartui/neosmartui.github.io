@@ -1,0 +1,58 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.input",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#input-demo"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#input-demo"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#input-demo"
+    },
+    "empty": {
+      "mode": "fixture",
+      "target": "#input-demo"
+    },
+    "filled": {
+      "mode": "controller",
+      "target": "#input-demo"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#input-demo"
+    },
+    "read-only": {
+      "mode": "controller",
+      "target": "#input-demo"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#input-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/input.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/input.mjs",
+          "export": "bindInput",
+          "selector": "#input-demo"
+        }
+      ]
+    }
+  }
+}

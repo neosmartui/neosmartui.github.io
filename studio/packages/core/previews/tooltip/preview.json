@@ -1,0 +1,38 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.tooltip",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "closed",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "closed": {
+      "mode": "fixture",
+      "target": "#tooltip-demo"
+    },
+    "open": {
+      "mode": "controller",
+      "target": "#tooltip-demo"
+    },
+    "dismissed": {
+      "mode": "controller",
+      "target": "#tooltip-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/tooltip.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/tooltip.mjs",
+          "export": "bindTooltip",
+          "selector": "#tooltip-target"
+        }
+      ]
+    }
+  }
+}

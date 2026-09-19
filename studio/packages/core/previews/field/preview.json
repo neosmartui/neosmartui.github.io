@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.field",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [
+    "core.input"
+  ],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#field-normal-demo"
+    },
+    "invalid": {
+      "mode": "fixture",
+      "target": "#field-invalid-demo"
+    },
+    "disabled": {
+      "mode": "fixture",
+      "target": "#field-disabled-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/field.css",
+        "packages/adapters/web/components/input.css"
+      ],
+      "bindings": []
+    }
+  }
+}

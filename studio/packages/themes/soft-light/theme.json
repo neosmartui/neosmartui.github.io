@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../spec/schemas/theme.schema.json",
+  "schema": "neosmartui/theme@1",
+  "name": "Soft Light",
+  "family": "neosmartui",
+  "category": "soft",
+  "color": {"mode":"light","strategy":"warm-neutral-softened-blue"},
+  "typography": {"strategy":"readable-system-first"},
+  "geometry": {"profile":"moderate-rounded"},
+  "border": {"profile":"visible-moderate"},
+  "shadow": {"model":"shallow-hard-depth"},
+  "spacing": {"density":"comfortable"},
+  "density": {"control":"comfortable"},
+  "motion": {"model":"pressure-not-levitation","intensity":"restrained"},
+  "interaction": {"model":"pressure-not-levitation","selection":"seated"},
+  "icons": {"strategy":"adapter-owned"}
+}

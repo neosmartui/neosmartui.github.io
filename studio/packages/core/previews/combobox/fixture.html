@@ -1,0 +1,16 @@
+        <div class="ns-combobox" id="combobox-demo" data-state="closed" data-query-state="query-empty" data-selection-state="unselected">
+          <label class="ns-combobox-label" for="combobox-input">Choose one framework</label>
+          <div class="ns-combobox-control">
+            <input class="ns-combobox-input" id="combobox-input" type="text" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="combobox-listbox" autocomplete="off" placeholder="Type to filter suggestions" />
+            <button class="ns-combobox-trigger" id="combobox-trigger" type="button" aria-label="Show suggestions" aria-controls="combobox-listbox">▼</button>
+          </div>
+          <div class="ns-combobox-popup" id="combobox-popup" hidden>
+            <div class="ns-combobox-list" id="combobox-listbox" role="listbox" aria-label="Framework suggestions">
+              <div class="ns-combobox-option" id="combobox-option-react" role="option" aria-selected="false" data-value="React">React</div>
+              <div class="ns-combobox-option" id="combobox-option-vue" role="option" aria-selected="false" data-value="Vue">Vue</div>
+              <div class="ns-combobox-option" id="combobox-option-svelte" role="option" aria-selected="false" aria-disabled="true" data-value="Svelte">Svelte · unavailable</div>
+              <div class="ns-combobox-option" id="combobox-option-solid" role="option" aria-selected="false" data-value="Solid">Solid</div>
+            </div>
+            <p class="ns-combobox-empty" id="combobox-empty" hidden>No matching suggestions</p>
+          </div>
+        </div>

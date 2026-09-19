@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../spec/schemas/theme.schema.json",
+  "schema": "neosmartui/theme@1",
+  "name": "Hardline Light",
+  "family": "neosmartui",
+  "category": "hardline",
+  "color": {"mode":"light","strategy":"high-reaction"},
+  "typography": {"strategy":"sharp-system-first"},
+  "geometry": {"profile":"square-zero-radius-default"},
+  "border": {"profile":"hard"},
+  "shadow": {"model":"strong-structural-depth"},
+  "spacing": {"density":"compact"},
+  "density": {"control":"compact"},
+  "motion": {"model":"pressure-not-levitation","intensity":"restrained"},
+  "interaction": {"model":"pressure-not-levitation","selection":"seated"},
+  "icons": {"strategy":"adapter-owned","treatment":"sharp"}
+}

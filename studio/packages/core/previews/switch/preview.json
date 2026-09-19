@@ -1,0 +1,58 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.switch",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#switch-demo"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#switch-demo"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#switch-demo"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#switch-demo"
+    },
+    "off": {
+      "mode": "fixture",
+      "target": "#switch-demo"
+    },
+    "on": {
+      "mode": "controller",
+      "target": "#switch-demo"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#switch-demo"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#switch-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/switch.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/switch.mjs",
+          "export": "bindSwitch",
+          "selector": "#switch-demo"
+        }
+      ]
+    }
+  }
+}

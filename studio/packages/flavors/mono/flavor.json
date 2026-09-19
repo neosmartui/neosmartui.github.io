@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../spec/schemas/flavor.schema.json",
+  "schema": "neosmartui/flavor@1",
+  "id": "flavor.mono",
+  "name": "Mono",
+  "intent": "Editorial black/white/gray neo-brutalist expression with type-led hierarchy, restrained monochrome surfaces, crisp print-like structural depth, pressure-not-levitation contact, and seated selection.",
+  "interactionModel": "pressure-not-levitation"
+}

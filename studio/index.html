@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="NeoSmartUI Studio — edit canonical Themes and preview shipping Core components." />
+    <title>NeoSmartUI Studio</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">NeoSmartUI Studio · v0.4</p>
+        <h1>Edit the Theme. Preview the real system.</h1>
+      </div>
+      <p class="topbar-note">Theme is data, not forked components.</p>
+    </header>
+    <main class="studio-grid" aria-label="NeoSmartUI Studio">
+      <aside class="panel controls-panel" aria-labelledby="theme-heading">
+        <div class="panel-heading"><p class="step">01</p><div><h2 id="theme-heading">Theme</h2><p>Edit one canonical Light or Dark Theme package.</p></div></div>
+        <section class="control-section" aria-labelledby="starter-heading">
+          <h3 id="starter-heading">Start from</h3>
+          <label for="starter-theme">Official Theme</label>
+          <select id="starter-theme" aria-describedby="starter-help"></select>
+          <button class="studio-button secondary" id="starter-load" type="button">Load official pair</button>
+          <p class="microcopy" id="starter-help">Loads canonical Light + Dark packages for Hardline, Soft, Rivet, or Mono. This replaces the current workspace.</p>
+        </section>
+        <section class="control-section" aria-labelledby="mode-heading">
+          <h3 id="mode-heading">Mode</h3>
+          <div class="button-row" role="group" aria-label="Theme mode">
+            <button class="studio-button" id="mode-light" type="button" data-mode="light" aria-pressed="false">Light</button>
+            <button class="studio-button" id="mode-dark" type="button" data-mode="dark" aria-pressed="false">Dark</button>
+          </div>
+          <p class="microcopy" id="theme-name">Loading canonical Theme…</p>
+        </section>
+        <section class="control-section" aria-labelledby="files-heading">
+          <h3 id="files-heading">Import / export</h3>
+          <label class="file-label" for="theme-import">Import exactly three canonical JSON files</label>
+          <input id="theme-import" type="file" accept=".json,application/json" multiple />
+          <label class="check-row" for="theme-import-new"><input id="theme-import-new" type="checkbox" /> <span>Start a new workspace from this imported Theme</span></label>
+          <button class="studio-button secondary" id="theme-export" type="button">Export current Theme</button>
+          <p class="microcopy">Accepted: <code>theme.json</code>, <code>resolution.json</code>, <code>tokens.json</code>.</p>
+        </section>
+        <section class="control-section" aria-labelledby="palette-heading"><h3 id="palette-heading">Palette</h3><p class="microcopy">Every resolved color role in the active Theme scope.</p><div id="color-controls" class="token-list"></div></section>
+        <section class="control-section" aria-labelledby="typography-heading"><h3 id="typography-heading">Typography</h3><p class="microcopy">Canonical font family, size, and weight roles only.</p><div id="typography-controls" class="token-list"></div></section>
+        <section class="control-section" aria-labelledby="spacing-heading"><h3 id="spacing-heading">Spacing &amp; size</h3><div id="spacing-controls" class="token-list"></div></section>
+        <section class="control-section" aria-labelledby="structure-heading"><h3 id="structure-heading">Borders &amp; radius</h3><div id="structure-controls" class="token-list"></div></section>
+        <section class="control-section" aria-labelledby="pressure-heading">
+          <h3 id="pressure-heading">Pressure</h3>
+          <p class="microcopy">Rest depth and travel are editable. Hover/active depth stays coupled so resting distance remains conserved.</p>
+          <div id="pressure-controls" class="token-list"></div>
+        </section>
+        <section class="control-section" aria-labelledby="motion-heading"><h3 id="motion-heading">Motion, focus &amp; state</h3><p class="microcopy">Durations, easing, focus geometry, and resolved state opacity.</p><div id="motion-controls" class="token-list"></div></section>
+      </aside>
+      <section class="workspace" aria-labelledby="preview-heading">
+        <div class="workspace-header">
+          <div><p class="step">02</p><h2 id="preview-heading">Shipping preview</h2></div>
+          <div class="viewport-controls" role="group" aria-label="Preview viewport">
+            <button class="viewport-button" type="button" data-viewport="desktop" aria-pressed="true">Desktop</button>
+            <button class="viewport-button" type="button" data-viewport="tablet" aria-pressed="false">Tablet</button>
+            <button class="viewport-button" type="button" data-viewport="mobile" aria-pressed="false">Mobile</button>
+          </div>
+        </div>
+        <div class="preview-stage" id="preview-stage" data-viewport="desktop"><div class="preview-device" id="preview-device"><div class="preview-placeholder">Building isolated preview…</div></div></div>
+        <p class="preview-status" id="preview-status" role="status" aria-live="polite">Preparing preview…</p>
+      </section>
+      <aside class="panel inspector-panel" aria-labelledby="component-heading">
+        <div class="panel-heading"><p class="step">03</p><div><h2 id="component-heading">Component</h2><p>Capabilities come from the canonical registry and contract.</p></div></div>
+        <section class="control-section">
+          <label for="component-select">Shipping Core component</label><select id="component-select"></select>
+          <label for="state-select">Declared state</label><select id="state-select"></select>
+          <p class="microcopy" id="state-guidance"></p>
+        </section>
+        <section class="control-section" aria-labelledby="environment-heading">
+          <h3 id="environment-heading">Environment truth</h3><div id="environment-status" class="status-stack"></div>
+          <p class="microcopy">Studio reports real browser/system capability. It does not synthesize fake Touch, Reduced Motion, or Forced Colors.</p>
+        </section>
+        <section class="control-section" aria-labelledby="validation-heading">
+          <h3 id="validation-heading">Validation</h3><div id="validation-status" class="validation-good">Theme valid.</div><ul id="validation-errors" class="error-list" aria-live="polite"></ul>
+        </section>
+        <section class="control-section" aria-labelledby="capabilities-heading">
+          <h3 id="capabilities-heading">Capabilities</h3>
+          <dl class="capability-list">
+            <div><dt>Components</dt><dd class="available">Available</dd></div>
+            <div><dt>Blocks</dt><dd>REGISTRY GAP</dd></div>
+            <div><dt>Pages</dt><dd>REGISTRY GAP</dd></div>
+            <div><dt>Verticals</dt><dd>REGISTRY GAP</dd></div>
+          </dl>
+        </section>
+      </aside>
+    </main>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>

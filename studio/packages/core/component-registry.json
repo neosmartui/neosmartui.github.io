@@ -1,0 +1,169 @@
+{
+  "$schema": "../../spec/schemas/component-registry.schema.json",
+  "schema": "neosmartui/component-registry@1",
+  "domain": "core",
+  "components": [
+    {
+      "id": "core.button",
+      "contract": "components/button.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/button.mjs",
+        "publicProof": "evidence/public/core.button.json"
+      }
+    },
+    {
+      "id": "core.checkbox",
+      "contract": "components/checkbox.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/checkbox.mjs",
+        "publicProof": "evidence/public/core.checkbox.json"
+      }
+    },
+    {
+      "id": "core.input",
+      "contract": "components/input.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/input.mjs",
+        "publicProof": "evidence/public/core.input.json"
+      }
+    },
+    {
+      "id": "core.radio",
+      "contract": "components/radio.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/radio.mjs",
+        "publicProof": "evidence/public/core.radio.json"
+      }
+    },
+    {
+      "id": "core.switch",
+      "contract": "components/switch.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/switch.mjs",
+        "publicProof": "evidence/public/core.switch.json"
+      }
+    },
+    {
+      "id": "core.tabs",
+      "contract": "components/tabs.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/tabs.mjs",
+        "publicProof": "evidence/public/core.tabs.json"
+      }
+    },
+    {
+      "id": "core.textarea",
+      "contract": "components/textarea.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/textarea.mjs",
+        "publicProof": "evidence/public/core.textarea.json"
+      }
+    },
+    {
+      "id": "core.select",
+      "contract": "components/select.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/select.mjs",
+        "publicProof": "evidence/public/core.select.json"
+      }
+    },
+    {
+      "id": "core.card",
+      "contract": "components/card.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/card.css",
+        "publicProof": "evidence/public/core.card.json"
+      }
+    },
+    {
+      "id": "core.badge",
+      "contract": "components/badge.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/badge.css",
+        "publicProof": "evidence/public/core.badge.json"
+      }
+    },
+    {
+      "id": "core.alert",
+      "contract": "components/alert.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/alert.css",
+        "publicProof": "evidence/public/core.alert.json"
+      }
+    },
+    {
+      "id": "core.field",
+      "contract": "components/field.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/field.css",
+        "publicProof": "evidence/public/core.field.json"
+      }
+    },
+    {
+      "id": "core.breadcrumb",
+      "contract": "components/breadcrumb.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/breadcrumb.css",
+        "publicProof": "evidence/public/core.breadcrumb.json"
+      }
+    },
+    {
+      "id": "core.pagination",
+      "contract": "components/pagination.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/pagination.css",
+        "publicProof": "evidence/public/core.pagination.json"
+      }
+    },
+    {
+      "id": "core.segmented-control",
+      "contract": "components/segmented-control.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/segmented-control.mjs",
+        "publicProof": "evidence/public/core.segmented-control.json"
+      }
+    },
+    {
+      "id": "core.tooltip",
+      "contract": "components/tooltip.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/tooltip.mjs",
+        "publicProof": "evidence/public/core.tooltip.json"
+      }
+    },
+    {
+      "id": "core.combobox",
+      "contract": "components/combobox.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/combobox.mjs",
+        "publicProof": "evidence/public/core.combobox.json"
+      }
+    },
+    {
+      "id": "core.accordion",
+      "contract": "components/accordion.json",
+      "maturity": "public-proof",
+      "evidence": {
+        "implementation": "packages/adapters/web/components/accordion.mjs",
+        "publicProof": "evidence/public/core.accordion.json"
+      }
+    }
+  ]
+}

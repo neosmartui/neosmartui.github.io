@@ -1,0 +1,71 @@
+.ns-textarea {
+  display: block;
+  inline-size: 100%;
+  min-block-size: calc(var(--ns-size-control-minimum) * 3);
+  padding: var(--ns-space-control-block) var(--ns-space-control-inline);
+  border: var(--ns-border-control-width) solid var(--ns-color-border-default);
+  border-radius: var(--ns-radius-control);
+  background: var(--ns-color-surface-interactive);
+  color: var(--ns-color-content-primary);
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-body);
+  font-weight: var(--ns-font-weight-regular);
+  line-height: 1.4;
+  box-shadow: none;
+  transform: none;
+  transition-property: border-color, background-color, color, outline-color, opacity;
+  transition-duration: var(--ns-motion-standard-duration);
+  transition-timing-function: var(--ns-motion-standard-easing);
+}
+
+.ns-textarea::placeholder {
+  color: var(--ns-color-content-secondary);
+  opacity: 1;
+}
+
+.ns-textarea:hover:not(:disabled) {
+  border-color: var(--ns-color-border-strong);
+  transform: none;
+}
+
+.ns-textarea:focus-visible {
+  border-color: var(--ns-color-border-strong);
+  outline: var(--ns-focus-ring-width) solid var(--ns-color-focus-ring);
+  outline-offset: var(--ns-focus-ring-offset);
+  transform: none;
+}
+
+.ns-textarea:active:not(:disabled) {
+  transform: none;
+}
+
+.ns-textarea[aria-invalid="true"] {
+  border-color: var(--ns-color-state-error);
+}
+
+.ns-textarea:read-only {
+  border-style: dashed;
+  cursor: text;
+}
+
+.ns-textarea:disabled {
+  cursor: not-allowed;
+  opacity: var(--ns-opacity-disabled);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ns-textarea { transition-duration: 1ms; }
+}
+
+@media (forced-colors: active) {
+  .ns-textarea {
+    background: Canvas;
+    color: CanvasText;
+    border-color: ButtonText;
+    forced-color-adjust: auto;
+  }
+  .ns-textarea::placeholder { color: GrayText; }
+  .ns-textarea:focus-visible { outline-color: Highlight; }
+  .ns-textarea[aria-invalid="true"] { border-color: Mark; }
+  .ns-textarea:disabled { color: GrayText; }
+}

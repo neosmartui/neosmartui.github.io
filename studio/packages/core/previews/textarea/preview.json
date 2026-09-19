@@ -1,0 +1,58 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.textarea",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#textarea-demo"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#textarea-demo"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#textarea-demo"
+    },
+    "empty": {
+      "mode": "fixture",
+      "target": "#textarea-demo"
+    },
+    "filled": {
+      "mode": "controller",
+      "target": "#textarea-demo"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#textarea-demo"
+    },
+    "read-only": {
+      "mode": "controller",
+      "target": "#textarea-demo"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#textarea-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/textarea.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/textarea.mjs",
+          "export": "bindTextarea",
+          "selector": "#textarea-demo"
+        }
+      ]
+    }
+  }
+}

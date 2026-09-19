@@ -1,0 +1,32 @@
+{
+  "$schema": "../../../spec/schemas/component.schema.json",
+  "schema": "neosmartui/component@1",
+  "id": "core.card",
+  "layer": "component",
+  "domain": "core",
+  "intent": "Group related informational content on a stable visual surface without implying activation or navigation.",
+  "states": ["rest"],
+  "dependencies": [
+    "color.surface.panel",
+    "color.content.primary",
+    "color.content.secondary",
+    "color.border.strong",
+    "space.surface.inline",
+    "space.surface.block",
+    "border.surface.width",
+    "radius.surface",
+    "depth.rest.x",
+    "depth.rest.y",
+    "font.family.body",
+    "font.size.body",
+    "font.weight.regular",
+    "font.weight.strong"
+  ],
+  "supports": {
+    "keyboard": true,
+    "touch": true,
+    "rtl": true,
+    "reducedMotion": true,
+    "forcedColors": true
+  }
+}

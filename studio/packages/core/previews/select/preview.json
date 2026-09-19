@@ -1,0 +1,54 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.select",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#select-demo"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#select-demo"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#select-demo"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#select-demo"
+    },
+    "selected": {
+      "mode": "fixture",
+      "target": "#select-demo"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#select-demo"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#select-demo"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/select.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/select.mjs",
+          "export": "bindSelect",
+          "selector": "#select-demo"
+        }
+      ]
+    }
+  }
+}

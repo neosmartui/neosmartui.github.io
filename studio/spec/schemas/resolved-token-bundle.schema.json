@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://neosmartui.com/schemas/resolved-token-bundle@1.json",
+  "title": "NeoSmartUI Resolved Token Bundle v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "theme", "flavor", "scope", "values"],
+  "properties": {
+    "$schema": {"type":"string"},
+    "schema": {"const":"neosmartui/resolved-token-bundle@1"},
+    "theme": {"type":"string","minLength":1},
+    "flavor": {"type":"string","pattern":"^flavor\\.[a-z][a-z0-9-]*$"},
+    "scope": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "values": {
+      "type":"array",
+      "minItems":1,
+      "items": {
+        "type":"object",
+        "additionalProperties":false,
+        "required":["id","type","value"],
+        "properties": {
+          "id":{"type":"string","pattern":"^[a-z][a-z0-9-]*(?:\\.[a-z][a-z0-9-]*)+$"},
+          "type":{"enum":["color","dimension","duration","cubicBezier","number","fontFamily","fontWeight"]},
+          "value":{}
+        }
+      }
+    }
+  }
+}

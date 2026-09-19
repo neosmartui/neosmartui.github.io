@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.button",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": ".ns-button"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": ".ns-button"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": ".ns-button"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": ".ns-button"
+    },
+    "loading": {
+      "mode": "controller",
+      "target": ".ns-button"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": ".ns-button"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/button.css"
+      ],
+      "bindings": []
+    }
+  }
+}

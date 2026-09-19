@@ -1,0 +1,27 @@
+.checkbox-examples { display: grid; gap: 0.75rem; margin-top: 1.25rem; }
+.checkbox-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; font-weight: 750; }
+.checkbox-row label { overflow-wrap: anywhere; cursor: pointer; }
+.input-example { display: grid; gap: 0.5rem; max-inline-size: 36rem; margin-top: 1.25rem; }
+.input-example label { font-weight: 750; }
+.radio-examples { display: grid; gap: 0.75rem; margin: 1.25rem 0 0; padding: 0; border: 0; }
+.radio-examples legend { margin-bottom: 0.5rem; font-weight: 750; }
+.radio-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; font-weight: 750; }
+.radio-row label { overflow-wrap: anywhere; cursor: pointer; }
+.switch-row { display: flex; align-items: center; gap: 0.5rem; min-inline-size: 0; margin-top: 1.25rem; font-weight: 750; }
+.switch-row label { overflow-wrap: anywhere; cursor: pointer; }
+.tabs-examples { display: grid; gap: 1.25rem; margin-top: 1.25rem; }
+.tabs-example-label { margin: 0 0 0.5rem; font-weight: 750; }
+.textarea-example { display: grid; gap: 0.5rem; max-inline-size: 42rem; margin-top: 1.25rem; }
+.textarea-example label { font-weight: 750; }
+.select-example { display: grid; gap: 0.5rem; max-inline-size: 36rem; margin-top: 1.25rem; }
+.select-example label { font-weight: 750; }
+.card-example { max-inline-size: 40rem; margin-top: 1.25rem; }
+.badge-examples { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 0.75rem; max-inline-size: 48rem; margin-top: 1.25rem; }
+.alert-examples { display: grid; gap: 1rem; max-inline-size: 48rem; margin-top: 1.25rem; }
+.field-examples { display: grid; gap: 1.5rem; max-inline-size: 42rem; margin-top: 1.25rem; }
+.breadcrumb-example { max-inline-size: 48rem; margin-top: 1.25rem; }
+.pagination-example { max-inline-size: 52rem; margin-top: 1.25rem; }
+.segmented-control-example { max-inline-size: 48rem; margin-top: 1.25rem; }
+.tooltip-examples { display: flex; flex-wrap: wrap; align-items: center; gap: 1.5rem; min-inline-size: 0; max-inline-size: 100%; margin-top: 1.25rem; padding-block-end: 3rem; }
+.tooltip-example { position: relative; display: inline-flex; align-items: center; min-inline-size: 0; max-inline-size: 100%; }
+.tooltip-example > a, #tooltip-next-focus { min-inline-size: 0; max-inline-size: 100%; overflow-wrap: anywhere; }

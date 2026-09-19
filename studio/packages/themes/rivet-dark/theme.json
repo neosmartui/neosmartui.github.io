@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../spec/schemas/theme.schema.json",
+  "schema": "neosmartui/theme@1",
+  "name": "Rivet Dark",
+  "family": "neosmartui",
+  "category": "rivet",
+  "color": {"mode":"dark","strategy":"industrial-lavender-lime-dark"},
+  "typography": {"strategy":"sturdy-system-first"},
+  "geometry": {"profile":"mechanical"},
+  "border": {"profile":"strong"},
+  "shadow": {"model":"coherent-depth"},
+  "spacing": {"density":"comfortable"},
+  "density": {"control":"comfortable"},
+  "motion": {"model":"pressure-not-levitation"},
+  "interaction": {"model":"pressure-not-levitation"},
+  "icons": {"strategy":"adapter-owned"}
+}

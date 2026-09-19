@@ -1,0 +1,6 @@
+{
+  "artifact": "studio",
+  "sourceSha": "21147fdd8b97e60635d1c7d635bb463e73a616cf",
+  "publicDeployment": true,
+  "publicRoute": "/studio/"
+}

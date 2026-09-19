@@ -1,0 +1,17 @@
+{
+  "$schema": "../../../spec/schemas/theme.schema.json",
+  "schema": "neosmartui/theme@1",
+  "name": "Mono Dark",
+  "family": "neosmartui",
+  "category": "mono",
+  "color": {"mode":"dark","strategy":"editorial-monochrome-dark"},
+  "typography": {"strategy":"editorial-type-led"},
+  "geometry": {"profile":"editorial-structured"},
+  "border": {"profile":"print-keyline"},
+  "shadow": {"model":"crisp-monochrome-depth"},
+  "spacing": {"density":"editorial"},
+  "density": {"control":"comfortable"},
+  "motion": {"model":"pressure-not-levitation","intensity":"restrained"},
+  "interaction": {"model":"pressure-not-levitation","selection":"seated"},
+  "icons": {"strategy":"adapter-owned"}
+}

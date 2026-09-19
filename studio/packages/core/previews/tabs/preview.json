@@ -1,0 +1,59 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.tabs",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#tab-auto-overview"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#tab-auto-details"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#tab-auto-overview"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#tab-auto-details"
+    },
+    "unselected": {
+      "mode": "fixture",
+      "target": "#tab-auto-details"
+    },
+    "selected": {
+      "mode": "fixture",
+      "target": "#tab-auto-overview"
+    },
+    "disabled": {
+      "mode": "fixture",
+      "target": "#tab-auto-disabled"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/tabs.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/tabs.mjs",
+          "export": "bindTabs",
+          "selector": "#tabs-auto-list"
+        },
+        {
+          "module": "packages/adapters/web/components/tabs.mjs",
+          "export": "bindTabs",
+          "selector": "#tabs-manual-list"
+        }
+      ]
+    }
+  }
+}

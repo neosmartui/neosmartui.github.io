@@ -1,0 +1,24 @@
+        <div class="ns-accordion" id="accordion-single-demo" data-expansion="single">
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-a" type="button" aria-expanded="true" aria-controls="accordion-single-panel-a"><span>Single expansion · Architecture</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-a" aria-labelledby="accordion-single-trigger-a"><p>One open item does not turn disclosure state into tab selection.</p><a id="accordion-panel-link" href="#principles">Focusable panel content</a></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-b" type="button" aria-expanded="false" aria-controls="accordion-single-panel-b"><span>Single expansion · Interaction</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-b" aria-labelledby="accordion-single-trigger-b" hidden><p>Opening this item closes its peer while focus remains on the activating button.</p></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-single-trigger-disabled" type="button" aria-expanded="false" aria-controls="accordion-single-panel-disabled" disabled><span>Unavailable disclosure</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-single-panel-disabled" aria-labelledby="accordion-single-trigger-disabled" hidden><p>Disabled native buttons stay inert.</p></div>
+          </div>
+        </div>
+        <div class="ns-accordion" id="accordion-multiple-demo" data-expansion="multiple">
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-multiple-trigger-a" type="button" aria-expanded="false" aria-controls="accordion-multiple-panel-a"><span>Multiple expansion · First</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-multiple-panel-a" aria-labelledby="accordion-multiple-trigger-a" hidden><p>Multiple mode allows peers to remain independently disclosed.</p></div>
+          </div>
+          <div class="ns-accordion-item">
+            <h3 class="ns-accordion-heading"><button class="ns-accordion-trigger" id="accordion-multiple-trigger-b" type="button" aria-expanded="false" aria-controls="accordion-multiple-panel-b"><span>Multiple expansion · Second</span><span class="ns-accordion-indicator" aria-hidden="true">▶</span></button></h3>
+            <div class="ns-accordion-panel" id="accordion-multiple-panel-b" aria-labelledby="accordion-multiple-trigger-b" hidden><p>Each open panel remains a disclosure, never a selected tabpanel.</p></div>
+          </div>
+        </div>

@@ -1,0 +1,8 @@
+{
+  "$schema": "../../../spec/schemas/theme-resolution.schema.json",
+  "schema": "neosmartui/theme-resolution@1",
+  "flavor": "flavor.rivet",
+  "theme": "Rivet Dark",
+  "bundle": "tokens.json",
+  "scope": ["core.button", "core.checkbox", "core.input", "core.radio", "core.switch", "core.tabs", "core.textarea", "core.select", "core.card", "core.badge", "core.alert", "core.field", "core.breadcrumb", "core.pagination", "core.segmented-control", "core.tooltip", "core.combobox", "core.accordion"]
+}

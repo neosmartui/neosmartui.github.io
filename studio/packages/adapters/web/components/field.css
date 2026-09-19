@@ -1,0 +1,60 @@
+.ns-field {
+  display: grid;
+  min-inline-size: 0;
+  gap: var(--ns-space-field-gap);
+  color: var(--ns-color-content-primary);
+  font-family: var(--ns-font-family-body);
+  font-size: var(--ns-font-size-body);
+  font-weight: var(--ns-font-weight-regular);
+  transform: none;
+  transition: none;
+}
+
+.ns-field-label {
+  min-inline-size: 0;
+  color: var(--ns-color-content-primary);
+  font-size: var(--ns-font-size-label);
+  font-weight: var(--ns-font-weight-emphasis);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.ns-field-description {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--ns-color-content-secondary);
+  font-size: var(--ns-font-size-body);
+  font-weight: var(--ns-font-weight-regular);
+  overflow-wrap: anywhere;
+}
+
+.ns-field-message {
+  min-inline-size: 0;
+  margin: 0;
+  color: var(--ns-color-state-error);
+  font-size: var(--ns-font-size-body);
+  font-weight: var(--ns-font-weight-emphasis);
+  overflow-wrap: anywhere;
+}
+
+.ns-field:has([aria-invalid="true"]) .ns-field-label {
+  color: var(--ns-color-state-error);
+}
+
+.ns-field:has(:disabled) .ns-field-label,
+.ns-field:has(:disabled) .ns-field-description {
+  color: var(--ns-color-content-secondary);
+}
+
+@media (forced-colors: active) {
+  .ns-field,
+  .ns-field-label,
+  .ns-field-description,
+  .ns-field-message,
+  .ns-field:has([aria-invalid="true"]) .ns-field-label,
+  .ns-field:has(:disabled) .ns-field-label,
+  .ns-field:has(:disabled) .ns-field-description {
+    color: CanvasText;
+    forced-color-adjust: auto;
+  }
+}

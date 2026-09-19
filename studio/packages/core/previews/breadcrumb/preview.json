@@ -1,0 +1,28 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.breadcrumb",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#breadcrumb-components"
+    },
+    "current": {
+      "mode": "fixture",
+      "target": "#breadcrumb-current"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/breadcrumb.css"
+      ],
+      "bindings": []
+    }
+  }
+}

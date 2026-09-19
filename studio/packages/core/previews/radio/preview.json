@@ -1,0 +1,58 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.radio",
+  "fixture": "fixture.html",
+  "controller": "controller.mjs",
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#radio-alpha"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#radio-beta"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#radio-alpha"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#radio-beta"
+    },
+    "unchecked": {
+      "mode": "fixture",
+      "target": "#radio-beta"
+    },
+    "checked": {
+      "mode": "fixture",
+      "target": "#radio-alpha"
+    },
+    "invalid": {
+      "mode": "controller",
+      "target": "#radio-beta"
+    },
+    "disabled": {
+      "mode": "controller",
+      "target": "#radio-beta"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/radio.css"
+      ],
+      "bindings": [
+        {
+          "module": "packages/adapters/web/components/radio.mjs",
+          "export": "bindRadio",
+          "selector": "#radio-alpha"
+        }
+      ]
+    }
+  }
+}

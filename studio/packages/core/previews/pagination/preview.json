@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../../spec/schemas/component-preview.schema.json",
+  "schema": "neosmartui/component-preview@1",
+  "component": "core.pagination",
+  "fixture": "fixture.html",
+  "controller": null,
+  "fixtureComponents": [],
+  "defaultState": "rest",
+  "resetStrategy": "remount",
+  "stateRealization": {
+    "rest": {
+      "mode": "fixture",
+      "target": "#pagination-page-1"
+    },
+    "hover": {
+      "mode": "native-pointer",
+      "target": "#pagination-page-1"
+    },
+    "focus-visible": {
+      "mode": "native-keyboard",
+      "target": "#pagination-page-1"
+    },
+    "pressed": {
+      "mode": "native-pointer",
+      "target": "#pagination-page-1"
+    },
+    "current": {
+      "mode": "fixture",
+      "target": "#pagination-current"
+    },
+    "disabled": {
+      "mode": "fixture",
+      "target": "#pagination-previous-unavailable"
+    }
+  },
+  "renderers": {
+    "web": {
+      "styles": [
+        "packages/adapters/web/components/pagination.css"
+      ],
+      "bindings": []
+    }
+  }
+}
