@@ -1,0 +1,76 @@
+name: Exact NeoSmartUI artifact deployment
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/deploy-exact-artifact.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    if: github.repository == 'neosmartui/neosmartui.github.io' && github.event.head_commit.message == 'Bootstrap exact NeoSmartUI deployment workflow'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Download and verify certified merged-main artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          ARTIFACT_ID=10578957954
+          ARTIFACT_SHA256=657c40c46357876a355ecd0825651d5c3712ebb5398374e6e0a8f1e75d215456
+          SOURCE_SHA=21147fdd8b97e60635d1c7d635bb463e73a616cf
+          curl --fail --location --silent --show-error \
+            -H 'Accept: application/vnd.github+json' \
+            -H 'X-GitHub-Api-Version: 2022-11-28' \
+            "https://api.github.com/repos/neosmartui/neosmartui/actions/artifacts/${ARTIFACT_ID}/zip" \
+            -o /tmp/neosmartui-artifact.zip
+          echo "${ARTIFACT_SHA256}  /tmp/neosmartui-artifact.zip" | sha256sum --check --strict
+          rm -rf /tmp/neosmartui-artifact
+          mkdir -p /tmp/neosmartui-artifact
+          unzip -q /tmp/neosmartui-artifact.zip -d /tmp/neosmartui-artifact
+          test -d /tmp/neosmartui-artifact/dist/foundry
+          test -d /tmp/neosmartui-artifact/dist/studio
+          SOURCE_SHA="${SOURCE_SHA}" node <<'NODE'
+          const fs = require('fs');
+          const expected = process.env.SOURCE_SHA;
+          const foundry = JSON.parse(fs.readFileSync('/tmp/neosmartui-artifact/dist/foundry/deployment.json','utf8'));
+          const studio = JSON.parse(fs.readFileSync('/tmp/neosmartui-artifact/dist/studio/deployment.json','utf8'));
+          const build = JSON.parse(fs.readFileSync('/tmp/neosmartui-artifact/dist/studio/studio-build.json','utf8'));
+          if (foundry.schema !== 'neosmartui/deployment-record@1' || foundry.sourceRepository !== 'neosmartui/neosmartui' || foundry.sourceSha !== expected || foundry.artifact !== 'foundry') throw new Error('Foundry deployment provenance mismatch');
+          if (studio.schema !== 'neosmartui/deployment-record@1' || studio.sourceRepository !== 'neosmartui/neosmartui' || studio.sourceSha !== expected || studio.artifact !== 'studio') throw new Error('Studio deployment provenance mismatch');
+          if (build.sourceSha !== expected || build.publicDeployment !== true || build.publicRoute !== '/studio/') throw new Error('Studio public build provenance mismatch');
+          NODE
+
+      - name: Stage exact Foundry and Studio bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          find . -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -a /tmp/neosmartui-artifact/dist/foundry/. ./
+          mkdir -p studio
+          cp -a /tmp/neosmartui-artifact/dist/studio/. ./studio/
+          git add -A
+          test "$(git ls-files | wc -l | tr -d ' ')" = "207"
+          test "$(git hash-object index.html)" = "59f28088a445c28fdd577615da2b2f6e06a65ade"
+          test "$(git hash-object studio/index.html)" = "5e14d3da9ec04002a2659d316f6c260d4e6c3bd0"
+          test "$(git hash-object deployment.json)" = "afd881f9f99b5d869e734340999f91bd65c5ad1c"
+          test "$(git hash-object studio/deployment.json)" = "b6938e55031458873ddfb06d88cc6105eaa5e174"
+          test "$(git write-tree)" = "76837242ee63237533244007878a9fbb062b75a0"
+          git diff --cached --check
+
+      - name: Commit exact deployment tree
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Deploy NeoSmartUI Studio launch artifact 21147fdd"
+          test "$(git show -s --format=%T HEAD)" = "76837242ee63237533244007878a9fbb062b75a0"
+          git push origin HEAD:main
